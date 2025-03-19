@@ -63,7 +63,7 @@ function ImgViewer(props) {
   useEffect(() => {
     onBScroll()
     slideImg.current = SmallImgRef.current ? Array.from(SmallImgRef.current) : null    
-  },[])
+  },[props.ImgList])
   async function changeLayout () {
     let layoutB = layout
     if (layout == 'h') {
@@ -86,9 +86,9 @@ function ImgViewer(props) {
         return 
       }
       setImgIndex(++imgIndex)
-      if (layout == 'v') {
+      if (layout == 'v' && slideImg.current[imgIndex]) {
         bottom()
-      } else {
+      } else if (slideImg.current[imgIndex]) {
         right()
       }
     } else if (type == 'l') {
@@ -97,9 +97,9 @@ function ImgViewer(props) {
         return
       }
       setImgIndex(--imgIndex)
-      if (layout == 'v') {
+      if (layout == 'v' && slideImg.current[imgIndex]) {
         top()
-      } else {
+      } else if (slideImg.current[imgIndex]) {
         left()
       }
     }

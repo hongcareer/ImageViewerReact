@@ -4299,7 +4299,7 @@ function Pi(o) {
     }
   ], ...o.toolInfo.fullTool];
   function U(d) {
-    n(d), o.toolInfo.smallClickFunc(i[d]);
+    n(d), o.toolInfo.smallClickFunc(i[d], d);
   }
   const M = tt(null), D = (d) => {
     let S = d || v;

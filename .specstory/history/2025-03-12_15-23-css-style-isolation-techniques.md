@@ -209,6 +209,52 @@ export default defineConfig({
 
 ---
 
+_**User**_
+
+解决
+
+---
+
+_**Assistant**_
+
+这个错误表示您在尝试使用 `npm version patch` 更新版本号时，Git 工作目录不干净（有未提交的更改）。
+
+要解决这个问题，您有以下几个选择：
+
+1. 提交所有更改后再更新版本：
+```bash
+# 添加所有更改
+git add .
+
+# 提交更改
+git commit -m "feat: 准备发布新版本"
+
+# 然后再次运行版本更新
+npm version patch
+```
+
+2. 如果您不想提交就更新版本，可以使用 `--force` 参数：
+```bash
+npm version patch --force
+```
+
+3. 或者临时跳过 Git 检查：
+```bash
+npm version patch --no-git-tag-version
+```
+
+建议使用第一种方式，这样可以保持版本控制的清晰性。这将会：
+1. 更新 package.json 中的版本号
+2. 创建一个新的 Git 提交
+3. 创建一个新的 Git 标签
+
+注意：如果您使用的是私有 npm 仓库，更新版本后别忘了：
+```bash
+npm publish
+```
+
+---
+
 
 
 ---
