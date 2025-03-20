@@ -15,10 +15,21 @@ function ImgViewer(props) {
   let [imgIndex,setImgIndex] = useState(0)
   let [scale,setScale] = useState(1)
   let [rotateDeg,setRotateDeg] = useState(0)
+  let [height,setHeight] = useState(0)
+  let [width,setWidth] = useState(0)
   let flag =
   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|OperaMini/i.test(window.navigator.userAgent) ||
   document.documentElement.clientWidth < 744
   let [layout, setLayout] = useState(ImgList.length == 1 || flag?'h':props.toolInfo.layout) 
+  const containerRef = useRef(null)
+
+  const heightinit = containerRef.current?.clientHeight
+  const widthinit = containerRef.current?.clientWidth
+  useEffect(() => {
+    console.log(heightinit,widthinit);
+    setHeight(heightinit)
+    setWidth(widthinit)
+  },[heightinit,widthinit])
   const toolself = [
     {
       icon: IR,
@@ -77,8 +88,6 @@ function ImgViewer(props) {
       onBScroll(layoutB)
     },2000)
   }
-  const height = document.documentElement.clientHeight
-  const width = document.documentElement.clientWidth
   function handleChangeIndex (type) {  
     if (type == 'r') {
       if (imgIndex >= ImgList.length-1) {
@@ -124,25 +133,31 @@ function ImgViewer(props) {
   }
   function right () {
     let target = slideImg.current[imgIndex][1]
-    let pos = update(target,0,width-40,'right','left')    
-    if (pos[0] === 'lower') {
-      BS2.current.scrollTo(width - target.offsetLeft - 110, 0, 300)
-    } else if (pos[0] === 'upper' || pos[2] < 92 ) {
+    let pos = update(target,0,width,'right','left')  
+    if (pos[0] === 'right') {
+      BS2.current.scrollTo(width - target.offsetLeft - 120, 0, 300)
+    } else if (pos[0] === 'left' || pos[2] < 92 ) {
       BS2.current.scrollTo(-target.offsetLeft + 28, 0, 300)
     }
   }
   function left () {
     let target = slideImg.current[imgIndex][1]
-    let pos = update(target,10,width-10,'left')
-    if (pos[0] === 'upper') {
+    let pos = update(target,10,width,'left')
+    if (pos[0] === 'left') {
       BS2.current.scrollTo(-target.offsetLeft, 0, 300)
     }
   }
-  // 判断元素所在屏幕位置：屏幕上-'upper', 屏幕中-'in', 屏幕下-'lower'
-  function update(target, compareLowerValue, compareUuperValue,type,number) {
+  // 判断元素所在屏幕位置：屏幕左-'left', 屏幕中-'in', 屏幕右-'right'
+  function update(target, compareLowerValue, compareUuperValue, type, number) {
     const rect = target.getBoundingClientRect();
+    const containerRect = containerRef.current?.getBoundingClientRect(); // 获取 containerRef 的位置
     console.log(rect);
-    return [rect[type]<compareLowerValue?'upper':rect[type] < compareUuperValue?'in':'lower',rect[type],rect[number]]
+    return [
+      rect[type] < containerRect.left ? 'left' :
+      rect[type] < containerRect.right ? 'in' : 'right',
+      rect[type],
+      rect[number]
+    ];
   }
   // PC端缩放、拖拽
   function handleMouseWheel(event:any) {
@@ -302,7 +317,7 @@ function ImgViewer(props) {
   }
   return (
     <>
-      <div className={'container '+(layout == 'h'?'active':'')}>
+      <div className={'container '+(layout == 'h'?'active':'')} ref={containerRef}>
         {
           props.toolInfo.layoutChange && props.ImgList.length > 1 && !flag?
           <div onClick={changeLayout} className={'horv '+(layout == 'h'?'active':'')}>
