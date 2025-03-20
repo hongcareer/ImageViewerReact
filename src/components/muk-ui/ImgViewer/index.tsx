@@ -72,9 +72,12 @@ function ImgViewer(props) {
   }
   let slideImg = useRef([])
   useEffect(() => {
-    onBScroll()
-    slideImg.current = SmallImgRef.current ? Array.from(SmallImgRef.current) : null    
-  },[props.ImgList])
+    // 仅在 ImgList 的长度变化时调用 onBScroll
+    if (props.ImgList.length !== slideImg.current?.length) {
+        onBScroll();
+    }
+    slideImg.current = SmallImgRef.current ? Array.from(SmallImgRef.current) : null;    
+  }, [props.ImgList]);
   async function changeLayout () {
     let layoutB = layout
     if (layout == 'h') {
