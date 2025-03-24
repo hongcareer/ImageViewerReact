@@ -115,7 +115,7 @@ function ImgViewer(props) {
         left()
       }
     }
-    
+    props.toolInfo.arrowFunc(imgIndex)
   }
   function bottom () {   
     let target = slideImg.current[imgIndex][1]
@@ -352,7 +352,7 @@ function ImgViewer(props) {
             }
           </div>
           {
-            props.ImgList.length > 1 ? 
+            props.ImgList.length >= 1 ? 
             <div className={'small-list '+(layout == 'h'?'active':'')}>
               <div className={'img-list '+(layout == 'h'?'active':'')}
                 style={{
