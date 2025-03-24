@@ -165,13 +165,13 @@ function ImgViewer(props) {
   // PC端缩放、拖拽
   function handleMouseWheel(event:any) {
     const delta = Math.sign(-event.deltaY); // 获取滚轮滚动的方向
-    const scaleNum = scale + (0.1 * delta)
-    setScale(scaleNum)  
-    if (scaleNum <= 0.1 || scaleNum >= 10) {
-      // 限制比例值在合理范围内
-      setScale(Math.max(Math.min(scaleNum, 10), 0.1))
-    }
-    event.target.style.transform = `translateX(-50%) translateY(-50%) scale(${scaleNum}) rotate(${rotateDeg}deg)`
+    const scaleNum = scale + (0.1 * delta);
+    const roundedScaleNum = Math.round(scaleNum * 100) / 100; // 四舍五入到小数点后两位
+    const newScale = Math.max(roundedScaleNum, 0.1); // 确保 scale 不小于 0.1
+    setScale(newScale);
+    console.log(newScale);
+    
+    event.target.style.transform = `translateX(-50%) translateY(-50%) scale(${newScale}) rotate(${rotateDeg}deg)`;
   }
   function onMouseWheel(type) {
     console.log(type);

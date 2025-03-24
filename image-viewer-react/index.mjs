@@ -49,7 +49,7 @@ function Ar() {
       return typeof f == "function" ? f : null;
     }
     var W = o.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-    function A(h) {
+    function M(h) {
       {
         for (var f = arguments.length, v = new Array(f > 1 ? f - 1 : 0), T = 1; T < f; T++)
           v[T - 1] = arguments[T];
@@ -88,7 +88,7 @@ function Ar() {
     function q(h) {
       if (h == null)
         return null;
-      if (typeof h.tag == "number" && A("Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."), typeof h == "function")
+      if (typeof h.tag == "number" && M("Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."), typeof h == "function")
         return h.displayName || h.name || null;
       if (typeof h == "string")
         return h;
@@ -189,7 +189,7 @@ function Ar() {
             })
           });
         }
-        at < 0 && A("disabledDepth fell below zero. This is a bug in React. Please file an issue.");
+        at < 0 && M("disabledDepth fell below zero. This is a bug in React. Please file an issue.");
       }
     }
     var Z = W.ReactCurrentDispatcher, yt;
@@ -341,7 +341,7 @@ function Ar() {
             } catch (B) {
               k = B;
             }
-            k && !(k instanceof Error) && (x(P), A("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", T || "React class", v, b, typeof k), x(null)), k instanceof Error && !(k.message in d) && (d[k.message] = !0, x(P), A("Failed %s type: %s", v, k.message), x(null));
+            k && !(k instanceof Error) && (x(P), M("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", T || "React class", v, b, typeof k), x(null)), k instanceof Error && !(k.message in d) && (d[k.message] = !0, x(P), M("Failed %s type: %s", v, k.message), x(null));
           }
       }
     }
@@ -367,7 +367,7 @@ function Ar() {
     }
     function xe(h) {
       if (Ft(h))
-        return A("The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.", Ht(h)), we(h);
+        return M("The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.", Ht(h)), we(h);
     }
     var Bt = W.ReactCurrentOwner, cr = {
       key: !0,
@@ -395,13 +395,13 @@ function Ar() {
     function fr(h, f) {
       if (typeof h.ref == "string" && Bt.current && f && Bt.current.stateNode !== f) {
         var v = q(Bt.current.type);
-        se[v] || (A('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', q(Bt.current.type), h.ref), se[v] = !0);
+        se[v] || (M('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', q(Bt.current.type), h.ref), se[v] = !0);
       }
     }
     function dr(h, f) {
       {
         var v = function() {
-          Ae || (Ae = !0, A("%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", f));
+          Ae || (Ae = !0, M("%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", f));
         };
         v.isReactWarning = !0, Object.defineProperty(h, "key", {
           get: v,
@@ -412,7 +412,7 @@ function Ar() {
     function vr(h, f) {
       {
         var v = function() {
-          Me || (Me = !0, A("%s: `ref` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", f));
+          Me || (Me = !0, M("%s: `ref` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", f));
         };
         v.isReactWarning = !0, Object.defineProperty(h, "ref", {
           get: v,
@@ -526,7 +526,7 @@ Check the top-level render call using <` + v + ">.");
           return;
         De[v] = !0;
         var T = "";
-        h && h._owner && h._owner !== ne.current && (T = " It was passed a child from " + q(h._owner.type) + "."), Tt(h), A('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', v, T), Tt(null);
+        h && h._owner && h._owner !== ne.current && (T = " It was passed a child from " + q(h._owner.type) + "."), Tt(h), M('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', v, T), Tt(null);
       }
     }
     function Ce(h, f) {
@@ -568,9 +568,9 @@ Check the top-level render call using <` + v + ">.");
         } else if (f.PropTypes !== void 0 && !ae) {
           ae = !0;
           var P = q(f);
-          A("Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?", P || "Unknown");
+          M("Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?", P || "Unknown");
         }
-        typeof f.getDefaultProps == "function" && !f.getDefaultProps.isReactClassApproved && A("getDefaultProps is only used on classic React.createClass definitions. Use a static property named `defaultProps` instead.");
+        typeof f.getDefaultProps == "function" && !f.getDefaultProps.isReactClassApproved && M("getDefaultProps is only used on classic React.createClass definitions. Use a static property named `defaultProps` instead.");
       }
     }
     function kr(h) {
@@ -578,11 +578,11 @@ Check the top-level render call using <` + v + ">.");
         for (var f = Object.keys(h.props), v = 0; v < f.length; v++) {
           var T = f[v];
           if (T !== "children" && T !== "key") {
-            Tt(h), A("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.", T), Tt(null);
+            Tt(h), M("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.", T), Tt(null);
             break;
           }
         }
-        h.ref !== null && (Tt(h), A("Invalid attribute `ref` supplied to `React.Fragment`."), Tt(null));
+        h.ref !== null && (Tt(h), M("Invalid attribute `ref` supplied to `React.Fragment`."), Tt(null));
       }
     }
     function Oe(h, f, v, T, P, E) {
@@ -594,7 +594,7 @@ Check the top-level render call using <` + v + ">.");
           var z = mr(P);
           z ? k += z : k += Be();
           var B;
-          h === null ? B = "null" : D(h) ? B = "array" : h !== void 0 && h.$$typeof === t ? (B = "<" + (q(h.type) || "Unknown") + " />", k = " Did you accidentally export a JSX literal instead of a component?") : B = typeof h, A("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", B, k);
+          h === null ? B = "null" : D(h) ? B = "array" : h !== void 0 && h.$$typeof === t ? (B = "<" + (q(h.type) || "Unknown") + " />", k = " Did you accidentally export a JSX literal instead of a component?") : B = typeof h, M("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", B, k);
         }
         var X = yr(h, f, v, P, E);
         if (X == null)
@@ -608,7 +608,7 @@ Check the top-level render call using <` + v + ">.");
                   Ce(V[St], h);
                 Object.freeze && Object.freeze(V);
               } else
-                A("React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.");
+                M("React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.");
             else
               Ce(V, h);
         }
@@ -983,7 +983,7 @@ function Rr(o) {
     top: -(t.top + window.pageYOffset)
   };
 }
-var Hr = Pt && Pt !== "standard" ? "-" + Pt.toLowerCase() + "-" : "", Fr = rt("transform"), sr = rt("transition"), zr = $ && rt("perspective") in be, Ue = $ && ("ontouchstart" in window || Yr), Lr = $ && sr in be, M = {
+var Hr = Pt && Pt !== "standard" ? "-" + Pt.toLowerCase() + "-" : "", Fr = rt("transform"), sr = rt("transition"), zr = $ && rt("perspective") in be, Ue = $ && ("ontouchstart" in window || Yr), Lr = $ && sr in be, A = {
   transform: Fr,
   transition: sr,
   transitionTimingFunction: rt("transitionTimingFunction"),
@@ -1381,7 +1381,7 @@ var ot = (
       this.setContent(t), this.hooks = new ot(["beforeTranslate", "translate"]);
     }
     return o.prototype.getComputedPosition = function() {
-      var t = window.getComputedStyle(this.content, null), e = t[M.transform].split(")")[0].split(", "), r = +(e[12] || e[4]) || 0, i = +(e[13] || e[5]) || 0;
+      var t = window.getComputedStyle(this.content, null), e = t[A.transform].split(")")[0].split(", "), r = +(e[12] || e[4]) || 0, i = +(e[13] || e[5]) || 0;
       return {
         x: r,
         y: i
@@ -1396,7 +1396,7 @@ var ot = (
             e.push(i + "(" + n + s + ")");
           }
         }
-      }), this.hooks.trigger(this.hooks.eventTypes.beforeTranslate, e, t), this.style[M.transform] = e.join(" "), this.hooks.trigger(this.hooks.eventTypes.translate, t);
+      }), this.hooks.trigger(this.hooks.eventTypes.beforeTranslate, e, t), this.style[A.transform] = e.join(" "), this.hooks.trigger(this.hooks.eventTypes.translate, t);
     }, o.prototype.setContent = function(t) {
       this.content !== t && (this.content = t, this.style = t.style);
     }, o.prototype.destroy = function() {
@@ -1453,11 +1453,11 @@ var ot = (
       };
       this.callStopWhenPending && this.setCallStop(!1), st(this.timer), n();
     }, t.prototype.transitionTime = function(e) {
-      e === void 0 && (e = 0), this.style[M.transitionDuration] = e + "ms", this.hooks.trigger(this.hooks.eventTypes.time, e);
+      e === void 0 && (e = 0), this.style[A.transitionDuration] = e + "ms", this.hooks.trigger(this.hooks.eventTypes.time, e);
     }, t.prototype.transitionTimingFunction = function(e) {
-      this.style[M.transitionTimingFunction] = e, this.hooks.trigger(this.hooks.eventTypes.timeFunction, e);
+      this.style[A.transitionTimingFunction] = e, this.hooks.trigger(this.hooks.eventTypes.timeFunction, e);
     }, t.prototype.transitionProperty = function() {
-      this.style[M.transitionProperty] = M.transform;
+      this.style[A.transitionProperty] = A.transform;
     }, t.prototype.move = function(e, r, i, s) {
       this.setPending(i > 0), this.transitionTimingFunction(s), this.transitionProperty(), this.transitionTime(i), this.translate(r);
       var n = this.options.probeType === 3;
@@ -1846,7 +1846,7 @@ var Ge = 1, fo = (
     }, o.prototype.registerTransitionEnd = function() {
       this.transitionEndRegister = new L(this.content, [
         {
-          name: M.transitionEnd,
+          name: A.transitionEnd,
           handler: this.transitionEnd.bind(this)
         }
       ]);
@@ -2675,7 +2675,7 @@ var ke = Jt, vo = (
       };
     }, o.prototype.fade = function(t) {
       var e = this.options, r = e.fadeInTime, i = e.fadeOutTime, s = t ? r : i, n = this.wrapper;
-      n.style[M.transitionDuration] = s + "ms", n.style.opacity = t ? "1" : "0";
+      n.style[A.transitionDuration] = s + "ms", n.style.opacity = t ? "1" : "0";
     }, o.prototype.refresh = function() {
       var t = this.keysMap.hasScroll, e = this.scroll, r = e.x, i = e.y;
       if (this.wrapperRect = this.wrapper.getBoundingClientRect(), this.canScroll(e[t])) {
@@ -2686,9 +2686,9 @@ var ke = Jt, vo = (
         });
       }
     }, o.prototype.transitionTime = function(t) {
-      t === void 0 && (t = 0), this.indicatorEl.style[M.transitionDuration] = t + "ms";
+      t === void 0 && (t = 0), this.indicatorEl.style[A.transitionDuration] = t + "ms";
     }, o.prototype.transitionTimingFunction = function(t) {
-      this.indicatorEl.style[M.transitionTimingFunction] = t;
+      this.indicatorEl.style[A.transitionTimingFunction] = t;
     }, o.prototype.canScroll = function(t) {
       return this.wrapper.style.display = t ? "block" : "none", t;
     }, o.prototype.refreshScrollInfo = function(t, e, r, i) {
@@ -2712,7 +2712,7 @@ var ke = Jt, vo = (
       };
     }, o.prototype.refreshStyle = function(t, e) {
       var r = this.keysMap, i = r.translateProperty, s = r.size, n = this.scroll.options.translateZ;
-      this.indicatorEl.style[s] = t + "px", this.indicatorEl.style[M.transform] = i + "(" + e + "px)" + n;
+      this.indicatorEl.style[s] = t + "px", this.indicatorEl.style[A.transform] = i + "(" + e + "px)" + n;
     }, o.prototype.startHandler = function() {
       this.moved = !1, this.startTime = N(), this.transitionTime(), this.scroll.scroller.hooks.trigger(this.scroll.scroller.hooks.eventTypes.beforeScrollStart);
     }, o.prototype.moveHandler = function(t) {
@@ -3276,14 +3276,14 @@ var ke = Jt, vo = (
       }
     }, o.prototype.transitionDuration = function(t) {
       for (var e = 0; e < this.items.length; e++)
-        this.items[e].style[M.transitionDuration] = t + "ms";
+        this.items[e].style[A.transitionDuration] = t + "ms";
     }, o.prototype.timeFunction = function(t) {
       for (var e = 0; e < this.items.length; e++)
-        this.items[e].style[M.transitionTimingFunction] = t;
+        this.items[e].style[A.transitionTimingFunction] = t;
     }, o.prototype.rotateX = function(t) {
       for (var e = this.options.rotate, r = e === void 0 ? 25 : e, i = 0; i < this.items.length; i++) {
         var s = r * (t / this.itemHeight + i), n = s.toFixed(3);
-        this.items[i].style[M.transform] = "rotateX(" + n + "deg)";
+        this.items[i].style[A.transform] = "rotateX(" + n + "deg)";
       }
     }, o.prototype.findNearestValidWheel = function(t) {
       t = t > 0 ? 0 : t < this.scroll.maxScrollY ? this.scroll.maxScrollY : t;
@@ -3383,7 +3383,7 @@ var ke = Jt, vo = (
         });
       }), this.registerHooks(this.scroll.hooks, "destroy", this.destroy);
     }, o.prototype.setTransformOrigin = function(t) {
-      t.style[M.transformOrigin] = "0 0";
+      t.style[A.transformOrigin] = "0 0";
     }, o.prototype.tryInitialZoomTo = function(t) {
       var e = t.start, r = t.initialOrigin, i = this.scroll.scroller, s = i.scrollBehaviorX, n = i.scrollBehaviorY;
       e !== Vt && (this.resetBoundaries([s, n]), this.zoomTo(e, r[0], r[1], 0));
@@ -3862,7 +3862,7 @@ var ke = Jt, vo = (
       var t = this.cached.pop();
       if (t) {
         var e = t.style;
-        return e.display = "", e.opacity = "1", e[M.transform] = "", e[M.transition] = "", t;
+        return e.display = "", e.opacity = "1", e[A.transform] = "", e[A.transition] = "", t;
       }
       return this.create();
     }, o.prototype.recycle = function(t) {
@@ -3921,9 +3921,9 @@ var ke = Jt, vo = (
         var p = t[u].tombstone;
         if (p) {
           var g = p.style;
-          g[M.transition] = Hr + "transform " + ve + "ms, opacity " + ve + "ms", g[M.transform] = "translateY(" + l + "px)", g.opacity = "0", t[u].tombstone = null, s.push(p);
+          g[A.transition] = Hr + "transform " + ve + "ms, opacity " + ve + "ms", g[A.transform] = "translateY(" + l + "px)", g.opacity = "0", t[u].tombstone = null, s.push(p);
         }
-        t[u].dom && t[u].pos !== l && (t[u].dom.style[M.transform] = "translateY(" + l + "px)", t[u].pos = l), l += t[u].height || this.tombstone.height;
+        t[u].dom && t[u].pos !== l && (t[u].dom.style[A.transform] = "translateY(" + l + "px)", t[u].pos = l), l += t[u].height || this.tombstone.height;
       }
       var y = window.setTimeout(function() {
         i.tombstone.recycle(s);
@@ -4143,9 +4143,9 @@ var ke = Jt, vo = (
         t.updatePosition(n);
       }), this.registerHooks(s, s.eventTypes.time, this.transitionTime), this.registerHooks(s, s.eventTypes.timeFunction, this.transitionTimingFunction);
     }, o.prototype.transitionTime = function(t) {
-      t === void 0 && (t = 0), this.indicatorEl.style[M.transitionDuration] = t + "ms";
+      t === void 0 && (t = 0), this.indicatorEl.style[A.transitionDuration] = t + "ms";
     }, o.prototype.transitionTimingFunction = function(t) {
-      this.indicatorEl.style[M.transitionTimingFunction] = t;
+      this.indicatorEl.style[A.transitionTimingFunction] = t;
     }, o.prototype.handleInteractive = function() {
       this.options.interactive !== !1 && this.registerEvents();
     }, o.prototype.registerHooks = function(t, e, r) {
@@ -4212,7 +4212,7 @@ var ke = Jt, vo = (
         m = C(W, u, l);
       }
       if (c) {
-        var A = C(s + r, Math.min(this.minScrollY, this.maxScrollY), Math.max(this.minScrollY, this.maxScrollY)), nt = Math.round(A / this.ratioY * this.translateYSign);
+        var M = C(s + r, Math.min(this.minScrollY, this.maxScrollY), Math.max(this.minScrollY, this.maxScrollY)), nt = Math.round(M / this.ratioY * this.translateYSign);
         O = C(nt, g, p);
       }
       return { x: m, y: O };
@@ -4231,7 +4231,7 @@ var ke = Jt, vo = (
         "translateY(" + t.y + "px)",
         "" + e
       ];
-      this.indicatorEl.style[M.transform] = r.join(" ");
+      this.indicatorEl.style[A.transform] = r.join(" ");
     }, o.prototype.getIndicatorPosByRatio = function(t) {
       var e = t.x, r = t.y, i = this.scroll, s = i.hasHorizontalScroll, n = i.hasVerticalScroll, a = G({}, this.currentPos);
       if (s) {
@@ -4283,7 +4283,7 @@ function Pi(o) {
   var ft, dt;
   const t = _(null), e = _(null), r = _(null), i = o.ImgList;
   let [s, n] = kt(0), [a, c] = kt(1), [l, u] = kt(0), [p, g] = kt(0), [y, m] = kt(0), O = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|OperaMini/i.test(window.navigator.userAgent) || document.documentElement.clientWidth < 744, [w, W] = kt(i.length == 1 || O ? "h" : o.toolInfo.layout);
-  const A = _(null), nt = (ft = A.current) == null ? void 0 : ft.clientHeight, xt = (dt = A.current) == null ? void 0 : dt.clientWidth;
+  const M = _(null), nt = (ft = M.current) == null ? void 0 : ft.clientHeight, xt = (dt = M.current) == null ? void 0 : dt.clientWidth;
   Re(() => {
     console.log(nt, xt), g(nt), m(xt);
   }, [nt, xt]);
@@ -4308,7 +4308,7 @@ function Pi(o) {
   }
   const U = _(null), At = (d) => {
     let S = d || w;
-    o.ImgList.length > 1 && A.current && (S == "h" ? U.current = new ke(".small-list", {
+    o.ImgList.length > 1 && (S == "h" ? U.current = new ke(".small-list", {
       scrollX: !0,
       eventPassthrough: "vertical",
       probeType: 3
@@ -4342,6 +4342,7 @@ function Pi(o) {
       }
       n(--s), w == "v" && j.current[s] ? tt() : j.current[s] && Ct();
     }
+    o.toolInfo.arrowFunc(s);
   }
   function q() {
     let d = j.current[s][1], S = lt(d, 10, p - 10, "bottom", "top");
@@ -4361,7 +4362,7 @@ function Pi(o) {
   }
   function lt(d, S, x, I, J) {
     var Ft;
-    const D = d.getBoundingClientRect(), Ht = (Ft = A.current) == null ? void 0 : Ft.getBoundingClientRect();
+    const D = d.getBoundingClientRect(), Ht = (Ft = M.current) == null ? void 0 : Ft.getBoundingClientRect();
     return console.log(D), [
       D[I] < Ht.left ? "left" : D[I] < Ht.right ? "in" : "right",
       D[I],
@@ -4438,7 +4439,7 @@ function Pi(o) {
   function ie() {
     return r.current || (r.current = /* @__PURE__ */ new Map()), r.current;
   }
-  return /* @__PURE__ */ R.jsx(R.Fragment, { children: /* @__PURE__ */ R.jsxs("div", { className: "container " + (w == "h" ? "active" : ""), ref: A, children: [
+  return /* @__PURE__ */ R.jsx(R.Fragment, { children: /* @__PURE__ */ R.jsxs("div", { className: "container " + (w == "h" ? "active" : ""), ref: M, children: [
     o.toolInfo.layoutChange && o.ImgList.length > 1 && !O ? /* @__PURE__ */ R.jsxs("div", { onClick: te, className: "horv " + (w == "h" ? "active" : ""), children: [
       /* @__PURE__ */ R.jsx("div", { className: "v" }),
       /* @__PURE__ */ R.jsx("div", { className: "h" })
