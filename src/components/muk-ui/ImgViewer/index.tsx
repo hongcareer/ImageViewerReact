@@ -338,8 +338,12 @@ function ImgViewer(props) {
             src={ImgList[imgIndex]}
             ref={ImgRef}
           />
-          <img src={RC} onClick={handleChangeIndex.bind(null,'l')} className="img-l"/>
-          <img src={LC} onClick={handleChangeIndex.bind(null,'r')} className="img-l"/>
+          {ImgList.length > 1  && (
+            <>
+              <img src={RC} onClick={handleChangeIndex.bind(null,'l')} className="img-l"/>
+              <img src={LC} onClick={handleChangeIndex.bind(null,'r')} className="img-l"/>
+            </>
+          )}
         </div>
         <div className={'rightSmall '+(layout == 'h'?'active':'')}>
           <div className={'toolbar '+(layout == 'h'?'active':'')}>
@@ -352,7 +356,7 @@ function ImgViewer(props) {
             }
           </div>
           {
-            props.ImgList.length >= 1 ? 
+            props.ImgList.length > 1 ? 
             <div className={'small-list '+(layout == 'h'?'active':'')}>
               <div className={'img-list '+(layout == 'h'?'active':'')}
                 style={{

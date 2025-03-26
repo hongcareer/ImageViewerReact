@@ -41,15 +41,15 @@ var Xt = {};
 var ze;
 function Ar() {
   return ze || (ze = 1, process.env.NODE_ENV !== "production" && function() {
-    var o = rr, t = Symbol.for("react.element"), e = Symbol.for("react.portal"), r = Symbol.for("react.fragment"), i = Symbol.for("react.strict_mode"), s = Symbol.for("react.profiler"), n = Symbol.for("react.provider"), a = Symbol.for("react.context"), c = Symbol.for("react.forward_ref"), l = Symbol.for("react.suspense"), u = Symbol.for("react.suspense_list"), p = Symbol.for("react.memo"), g = Symbol.for("react.lazy"), y = Symbol.for("react.offscreen"), m = Symbol.iterator, O = "@@iterator";
+    var o = rr, t = Symbol.for("react.element"), e = Symbol.for("react.portal"), r = Symbol.for("react.fragment"), i = Symbol.for("react.strict_mode"), s = Symbol.for("react.profiler"), n = Symbol.for("react.provider"), a = Symbol.for("react.context"), c = Symbol.for("react.forward_ref"), l = Symbol.for("react.suspense"), u = Symbol.for("react.suspense_list"), p = Symbol.for("react.memo"), g = Symbol.for("react.lazy"), y = Symbol.for("react.offscreen"), m = Symbol.iterator, I = "@@iterator";
     function w(h) {
       if (h === null || typeof h != "object")
         return null;
-      var f = m && h[m] || h[O];
+      var f = m && h[m] || h[I];
       return typeof f == "function" ? f : null;
     }
-    var W = o.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-    function M(h) {
+    var U = o.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+    function A(h) {
       {
         for (var f = arguments.length, v = new Array(f > 1 ? f - 1 : 0), T = 1; T < f; T++)
           v[T - 1] = arguments[T];
@@ -58,7 +58,7 @@ function Ar() {
     }
     function nt(h, f, v) {
       {
-        var T = W.ReactDebugCurrentFrame, P = T.getStackAddendum();
+        var T = U.ReactDebugCurrentFrame, P = T.getStackAddendum();
         P !== "" && (f += "%s", v = v.concat([P]));
         var E = v.map(function(b) {
           return String(b);
@@ -66,10 +66,10 @@ function Ar() {
         E.unshift("Warning: " + f), Function.prototype.apply.call(console[h], console, E);
       }
     }
-    var xt = !1, Ee = !1, _t = !1, $t = !1, U = !1, At;
+    var xt = !1, Ee = !1, _t = !1, $t = !1, j = !1, At;
     At = Symbol.for("react.module.reference");
-    function j(h) {
-      return !!(typeof h == "string" || typeof h == "function" || h === r || h === s || U || h === i || h === l || h === u || $t || h === y || xt || Ee || _t || typeof h == "object" && h !== null && (h.$$typeof === g || h.$$typeof === p || h.$$typeof === n || h.$$typeof === a || h.$$typeof === c || // This needs to include all possible module reference object
+    function V(h) {
+      return !!(typeof h == "string" || typeof h == "function" || h === r || h === s || j || h === i || h === l || h === u || $t || h === y || xt || Ee || _t || typeof h == "object" && h !== null && (h.$$typeof === g || h.$$typeof === p || h.$$typeof === n || h.$$typeof === a || h.$$typeof === c || // This needs to include all possible module reference object
       // types supported by any Flight configuration anywhere since
       // we don't know which Flight build this will end up being used
       // with.
@@ -85,10 +85,10 @@ function Ar() {
     function Mt(h) {
       return h.displayName || "Context";
     }
-    function q(h) {
+    function K(h) {
       if (h == null)
         return null;
-      if (typeof h.tag == "number" && M("Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."), typeof h == "function")
+      if (typeof h.tag == "number" && A("Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."), typeof h == "function")
         return h.displayName || h.name || null;
       if (typeof h == "string")
         return h;
@@ -118,11 +118,11 @@ function Ar() {
             return te(h, h.render, "ForwardRef");
           case p:
             var T = h.displayName || null;
-            return T !== null ? T : q(h.type) || "Memo";
+            return T !== null ? T : K(h.type) || "Memo";
           case g: {
             var P = h, E = P._payload, b = P._init;
             try {
-              return q(b(E));
+              return K(b(E));
             } catch {
               return null;
             }
@@ -130,14 +130,14 @@ function Ar() {
         }
       return null;
     }
-    var tt = Object.assign, at = 0, Ct, lt, Ot, Yt, It, Q, ht;
+    var tt = Object.assign, at = 0, Ct, lt, Ot, Yt, It, Z, ht;
     function ct() {
     }
     ct.__reactDisabledLog = !0;
     function ee() {
       {
         if (at === 0) {
-          Ct = console.log, lt = console.info, Ot = console.warn, Yt = console.error, It = console.group, Q = console.groupCollapsed, ht = console.groupEnd;
+          Ct = console.log, lt = console.info, Ot = console.warn, Yt = console.error, It = console.group, Z = console.groupCollapsed, ht = console.groupEnd;
           var h = {
             configurable: !0,
             enumerable: !0,
@@ -157,7 +157,7 @@ function Ar() {
         at++;
       }
     }
-    function Y() {
+    function M() {
       {
         if (at--, at === 0) {
           var h = {
@@ -182,17 +182,17 @@ function Ar() {
               value: It
             }),
             groupCollapsed: tt({}, h, {
-              value: Q
+              value: Z
             }),
             groupEnd: tt({}, h, {
               value: ht
             })
           });
         }
-        at < 0 && M("disabledDepth fell below zero. This is a bug in React. Please file an issue.");
+        at < 0 && A("disabledDepth fell below zero. This is a bug in React. Please file an issue.");
       }
     }
-    var Z = W.ReactCurrentDispatcher, yt;
+    var J = U.ReactCurrentDispatcher, yt;
     function ut(h, f, v) {
       {
         if (yt === void 0)
@@ -224,7 +224,7 @@ function Ar() {
       var P = Error.prepareStackTrace;
       Error.prepareStackTrace = void 0;
       var E;
-      E = Z.current, Z.current = null, ee();
+      E = J.current, J.current = null, ee();
       try {
         if (f) {
           var b = function() {
@@ -261,23 +261,23 @@ function Ar() {
         if (et && T && typeof et.stack == "string") {
           for (var k = et.stack.split(`
 `), z = T.stack.split(`
-`), B = k.length - 1, X = z.length - 1; B >= 1 && X >= 0 && k[B] !== z[X]; )
-            X--;
-          for (; B >= 1 && X >= 0; B--, X--)
-            if (k[B] !== z[X]) {
-              if (B !== 1 || X !== 1)
+`), Y = k.length - 1, C = z.length - 1; Y >= 1 && C >= 0 && k[Y] !== z[C]; )
+            C--;
+          for (; Y >= 1 && C >= 0; Y--, C--)
+            if (k[Y] !== z[C]) {
+              if (Y !== 1 || C !== 1)
                 do
-                  if (B--, X--, X < 0 || k[B] !== z[X]) {
-                    var V = `
-` + k[B].replace(" at new ", " at ");
-                    return h.displayName && V.includes("<anonymous>") && (V = V.replace("<anonymous>", h.displayName)), typeof h == "function" && mt.set(h, V), V;
+                  if (Y--, C--, C < 0 || k[Y] !== z[C]) {
+                    var q = `
+` + k[Y].replace(" at new ", " at ");
+                    return h.displayName && q.includes("<anonymous>") && (q = q.replace("<anonymous>", h.displayName)), typeof h == "function" && mt.set(h, q), q;
                   }
-                while (B >= 1 && X >= 0);
+                while (Y >= 1 && C >= 0);
               break;
             }
         }
       } finally {
-        pt = !1, Z.current = E, Y(), Error.prepareStackTrace = P;
+        pt = !1, J.current = E, M(), Error.prepareStackTrace = P;
       }
       var St = h ? h.displayName || h.name : "", Ie = St ? ut(St) : "";
       return typeof h == "function" && mt.set(h, Ie), Ie;
@@ -318,15 +318,15 @@ function Ar() {
         }
       return "";
     }
-    var dt = Object.prototype.hasOwnProperty, d = {}, S = W.ReactDebugCurrentFrame;
-    function x(h) {
+    var dt = Object.prototype.hasOwnProperty, d = {}, S = U.ReactDebugCurrentFrame;
+    function B(h) {
       if (h) {
         var f = h._owner, v = ft(h.type, h._source, f ? f.type : null);
         S.setExtraStackFrame(v);
       } else
         S.setExtraStackFrame(null);
     }
-    function I(h, f, v, T, P) {
+    function D(h, f, v, T, P) {
       {
         var E = Function.call.bind(dt);
         for (var b in h)
@@ -338,16 +338,16 @@ function Ar() {
                 throw z.name = "Invariant Violation", z;
               }
               k = h[b](f, b, T, v, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
-            } catch (B) {
-              k = B;
+            } catch (Y) {
+              k = Y;
             }
-            k && !(k instanceof Error) && (x(P), M("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", T || "React class", v, b, typeof k), x(null)), k instanceof Error && !(k.message in d) && (d[k.message] = !0, x(P), M("Failed %s type: %s", v, k.message), x(null));
+            k && !(k instanceof Error) && (B(P), A("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", T || "React class", v, b, typeof k), B(null)), k instanceof Error && !(k.message in d) && (d[k.message] = !0, B(P), A("Failed %s type: %s", v, k.message), B(null));
           }
       }
     }
-    var J = Array.isArray;
-    function D(h) {
-      return J(h);
+    var L = Array.isArray;
+    function X(h) {
+      return L(h);
     }
     function Ht(h) {
       {
@@ -367,9 +367,9 @@ function Ar() {
     }
     function xe(h) {
       if (Ft(h))
-        return M("The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.", Ht(h)), we(h);
+        return A("The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.", Ht(h)), we(h);
     }
-    var Bt = W.ReactCurrentOwner, cr = {
+    var Bt = U.ReactCurrentOwner, cr = {
       key: !0,
       ref: !0,
       __self: !0,
@@ -394,14 +394,14 @@ function Ar() {
     }
     function fr(h, f) {
       if (typeof h.ref == "string" && Bt.current && f && Bt.current.stateNode !== f) {
-        var v = q(Bt.current.type);
-        se[v] || (M('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', q(Bt.current.type), h.ref), se[v] = !0);
+        var v = K(Bt.current.type);
+        se[v] || (A('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', K(Bt.current.type), h.ref), se[v] = !0);
       }
     }
     function dr(h, f) {
       {
         var v = function() {
-          Ae || (Ae = !0, M("%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", f));
+          Ae || (Ae = !0, A("%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", f));
         };
         v.isReactWarning = !0, Object.defineProperty(h, "key", {
           get: v,
@@ -412,7 +412,7 @@ function Ar() {
     function vr(h, f) {
       {
         var v = function() {
-          Me || (Me = !0, M("%s: `ref` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", f));
+          Me || (Me = !0, A("%s: `ref` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", f));
         };
         v.isReactWarning = !0, Object.defineProperty(h, "ref", {
           get: v,
@@ -456,18 +456,18 @@ function Ar() {
         for (E in f)
           dt.call(f, E) && !cr.hasOwnProperty(E) && (b[E] = f[E]);
         if (h && h.defaultProps) {
-          var B = h.defaultProps;
-          for (E in B)
-            b[E] === void 0 && (b[E] = B[E]);
+          var Y = h.defaultProps;
+          for (E in Y)
+            b[E] === void 0 && (b[E] = Y[E]);
         }
         if (k || z) {
-          var X = typeof h == "function" ? h.displayName || h.name || "Unknown" : h;
-          k && dr(b, X), z && vr(b, X);
+          var C = typeof h == "function" ? h.displayName || h.name || "Unknown" : h;
+          k && dr(b, C), z && vr(b, C);
         }
         return gr(h, k, z, P, T, Bt.current, b);
       }
     }
-    var ne = W.ReactCurrentOwner, Ye = W.ReactDebugCurrentFrame;
+    var ne = U.ReactCurrentOwner, Ye = U.ReactDebugCurrentFrame;
     function Tt(h) {
       if (h) {
         var f = h._owner, v = ft(h.type, h._source, f ? f.type : null);
@@ -483,7 +483,7 @@ function Ar() {
     function Be() {
       {
         if (ne.current) {
-          var h = q(ne.current.type);
+          var h = K(ne.current.type);
           if (h)
             return `
 
@@ -526,14 +526,14 @@ Check the top-level render call using <` + v + ">.");
           return;
         De[v] = !0;
         var T = "";
-        h && h._owner && h._owner !== ne.current && (T = " It was passed a child from " + q(h._owner.type) + "."), Tt(h), M('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', v, T), Tt(null);
+        h && h._owner && h._owner !== ne.current && (T = " It was passed a child from " + K(h._owner.type) + "."), Tt(h), A('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', v, T), Tt(null);
       }
     }
     function Ce(h, f) {
       {
         if (typeof h != "object")
           return;
-        if (D(h))
+        if (X(h))
           for (var v = 0; v < h.length; v++) {
             var T = h[v];
             le(T) && Xe(T, f);
@@ -563,14 +563,14 @@ Check the top-level render call using <` + v + ">.");
         else
           return;
         if (v) {
-          var T = q(f);
-          I(v, h.props, "prop", T, h);
+          var T = K(f);
+          D(v, h.props, "prop", T, h);
         } else if (f.PropTypes !== void 0 && !ae) {
           ae = !0;
-          var P = q(f);
-          M("Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?", P || "Unknown");
+          var P = K(f);
+          A("Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?", P || "Unknown");
         }
-        typeof f.getDefaultProps == "function" && !f.getDefaultProps.isReactClassApproved && M("getDefaultProps is only used on classic React.createClass definitions. Use a static property named `defaultProps` instead.");
+        typeof f.getDefaultProps == "function" && !f.getDefaultProps.isReactClassApproved && A("getDefaultProps is only used on classic React.createClass definitions. Use a static property named `defaultProps` instead.");
       }
     }
     function kr(h) {
@@ -578,41 +578,41 @@ Check the top-level render call using <` + v + ">.");
         for (var f = Object.keys(h.props), v = 0; v < f.length; v++) {
           var T = f[v];
           if (T !== "children" && T !== "key") {
-            Tt(h), M("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.", T), Tt(null);
+            Tt(h), A("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.", T), Tt(null);
             break;
           }
         }
-        h.ref !== null && (Tt(h), M("Invalid attribute `ref` supplied to `React.Fragment`."), Tt(null));
+        h.ref !== null && (Tt(h), A("Invalid attribute `ref` supplied to `React.Fragment`."), Tt(null));
       }
     }
     function Oe(h, f, v, T, P, E) {
       {
-        var b = j(h);
+        var b = V(h);
         if (!b) {
           var k = "";
           (h === void 0 || typeof h == "object" && h !== null && Object.keys(h).length === 0) && (k += " You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.");
           var z = mr(P);
           z ? k += z : k += Be();
-          var B;
-          h === null ? B = "null" : D(h) ? B = "array" : h !== void 0 && h.$$typeof === t ? (B = "<" + (q(h.type) || "Unknown") + " />", k = " Did you accidentally export a JSX literal instead of a component?") : B = typeof h, M("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", B, k);
+          var Y;
+          h === null ? Y = "null" : X(h) ? Y = "array" : h !== void 0 && h.$$typeof === t ? (Y = "<" + (K(h.type) || "Unknown") + " />", k = " Did you accidentally export a JSX literal instead of a component?") : Y = typeof h, A("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", Y, k);
         }
-        var X = yr(h, f, v, P, E);
-        if (X == null)
-          return X;
+        var C = yr(h, f, v, P, E);
+        if (C == null)
+          return C;
         if (b) {
-          var V = f.children;
-          if (V !== void 0)
+          var q = f.children;
+          if (q !== void 0)
             if (T)
-              if (D(V)) {
-                for (var St = 0; St < V.length; St++)
-                  Ce(V[St], h);
-                Object.freeze && Object.freeze(V);
+              if (X(q)) {
+                for (var St = 0; St < q.length; St++)
+                  Ce(q[St], h);
+                Object.freeze && Object.freeze(q);
               } else
-                M("React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.");
+                A("React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.");
             else
-              Ce(V, h);
+              Ce(q, h);
         }
-        return h === r ? kr(X) : Sr(X), X;
+        return h === r ? kr(C) : Sr(C), C;
       }
     }
     function br(h, f, v) {
@@ -661,15 +661,15 @@ function Qt(o, t) {
   }
   o.prototype = t === null ? Object.create(t) : (e.prototype = t.prototype, new e());
 }
-var G = function() {
-  return G = Object.assign || function(t) {
+var Q = function() {
+  return Q = Object.assign || function(t) {
     for (var e, r = 1, i = arguments.length; r < i; r++) {
       e = arguments[r];
       for (var s in e)
         Object.prototype.hasOwnProperty.call(e, s) && (t[s] = e[s]);
     }
     return t;
-  }, G.apply(this, arguments);
+  }, Q.apply(this, arguments);
 };
 function he(o, t, e, r) {
   function i(s) {
@@ -857,7 +857,7 @@ var Mr = [
     key: "resetPosition"
   }
 ];
-function K(o) {
+function G(o) {
   console.error("[BScroll warn]: " + o);
 }
 function Le(o, t) {
@@ -889,7 +889,7 @@ if ($) {
   } catch {
   }
 }
-function N() {
+function W() {
   return window.performance && window.performance.now && window.performance.timing ? window.performance.now() + window.performance.timing.navigationStart : +/* @__PURE__ */ new Date();
 }
 var F = function(o, t) {
@@ -903,7 +903,7 @@ function Te(o) {
 function Cr(o, t) {
   return Math.sqrt(o * o + t * t);
 }
-function C(o, t, e) {
+function O(o, t, e) {
   return o < t ? t : o > e ? e : o;
 }
 function bt(o, t) {
@@ -983,7 +983,7 @@ function Rr(o) {
     top: -(t.top + window.pageYOffset)
   };
 }
-var Hr = Pt && Pt !== "standard" ? "-" + Pt.toLowerCase() + "-" : "", Fr = rt("transform"), sr = rt("transition"), zr = $ && rt("perspective") in be, Ue = $ && ("ontouchstart" in window || Yr), Lr = $ && sr in be, A = {
+var Hr = Pt && Pt !== "standard" ? "-" + Pt.toLowerCase() + "-" : "", Fr = rt("transform"), sr = rt("transition"), zr = $ && rt("perspective") in be, Ue = $ && ("ontouchstart" in window || Yr), Lr = $ && sr in be, x = {
   transform: Fr,
   transition: sr,
   transitionTimingFunction: rt("transitionTimingFunction"),
@@ -1043,7 +1043,7 @@ function nr(o, t) {
   };
   if (typeof MouseEvent < "u")
     try {
-      i = new MouseEvent(t, F(G({
+      i = new MouseEvent(t, F(Q({
         bubbles: s,
         cancelable: n
       }, p), r));
@@ -1197,12 +1197,12 @@ var ot = (
       this.events = {}, this.eventTypes = {};
     }, o.prototype.hasType = function(t) {
       var e = this.eventTypes, r = e[t] === t;
-      r || K('EventEmitter has used unknown event type: "' + t + '", should be oneof [' + ("" + Object.keys(e).map(function(i) {
+      r || G('EventEmitter has used unknown event type: "' + t + '", should be oneof [' + ("" + Object.keys(e).map(function(i) {
         return JSON.stringify(i);
       })) + "]");
     }, o;
   }()
-), L = (
+), N = (
   /** @class */
   function() {
     function o(t, e) {
@@ -1317,7 +1317,7 @@ var ot = (
       }, {
         name: "mouseup",
         handler: this.end.bind(this)
-      })), this.wrapperEventRegister = new L(n, c), this.targetEventRegister = new L(a, l);
+      })), this.wrapperEventRegister = new N(n, c), this.targetEventRegister = new N(a, l);
     }, o.prototype.beforeHandler = function(t, e) {
       var r = this.options, i = r.preventDefault, s = r.stopPropagation, n = r.preventDefaultException, a = {
         start: function() {
@@ -1381,7 +1381,7 @@ var ot = (
       this.setContent(t), this.hooks = new ot(["beforeTranslate", "translate"]);
     }
     return o.prototype.getComputedPosition = function() {
-      var t = window.getComputedStyle(this.content, null), e = t[A.transform].split(")")[0].split(", "), r = +(e[12] || e[4]) || 0, i = +(e[13] || e[5]) || 0;
+      var t = window.getComputedStyle(this.content, null), e = t[x.transform].split(")")[0].split(", "), r = +(e[12] || e[4]) || 0, i = +(e[13] || e[5]) || 0;
       return {
         x: r,
         y: i
@@ -1396,7 +1396,7 @@ var ot = (
             e.push(i + "(" + n + s + ")");
           }
         }
-      }), this.hooks.trigger(this.hooks.eventTypes.beforeTranslate, e, t), this.style[A.transform] = e.join(" "), this.hooks.trigger(this.hooks.eventTypes.translate, t);
+      }), this.hooks.trigger(this.hooks.eventTypes.beforeTranslate, e, t), this.style[x.transform] = e.join(" "), this.hooks.trigger(this.hooks.eventTypes.translate, t);
     }, o.prototype.setContent = function(t) {
       this.content !== t && (this.content = t, this.style = t.style);
     }, o.prototype.destroy = function() {
@@ -1453,11 +1453,11 @@ var ot = (
       };
       this.callStopWhenPending && this.setCallStop(!1), st(this.timer), n();
     }, t.prototype.transitionTime = function(e) {
-      e === void 0 && (e = 0), this.style[A.transitionDuration] = e + "ms", this.hooks.trigger(this.hooks.eventTypes.time, e);
+      e === void 0 && (e = 0), this.style[x.transitionDuration] = e + "ms", this.hooks.trigger(this.hooks.eventTypes.time, e);
     }, t.prototype.transitionTimingFunction = function(e) {
-      this.style[A.transitionTimingFunction] = e, this.hooks.trigger(this.hooks.eventTypes.timeFunction, e);
+      this.style[x.transitionTimingFunction] = e, this.hooks.trigger(this.hooks.eventTypes.timeFunction, e);
     }, t.prototype.transitionProperty = function() {
-      this.style[A.transitionProperty] = A.transform;
+      this.style[x.transitionProperty] = x.transform;
     }, t.prototype.move = function(e, r, i, s) {
       this.setPending(i > 0), this.transitionTimingFunction(s), this.transitionProperty(), this.transitionTime(i), this.translate(r);
       var n = this.options.probeType === 3;
@@ -1489,8 +1489,8 @@ var ot = (
       }
       this.animate(e, r, i, s);
     }, t.prototype.animate = function(e, r, i, s) {
-      var n = this, a = N(), c = a + i, l = this.options.probeType === 3, u = function() {
-        var p = N();
+      var n = this, a = W(), c = a + i, l = this.options.probeType === 3, u = function() {
+        var p = W();
         if (p >= c) {
           n.translate(r), l && n.hooks.trigger(n.hooks.eventTypes.move, r), n.hooks.trigger(n.hooks.eventTypes.end, r);
           return;
@@ -1498,8 +1498,8 @@ var ot = (
         p = (p - a) / i;
         var g = s(p), y = {};
         Object.keys(r).forEach(function(m) {
-          var O = e[m], w = r[m];
-          y[m] = (w - O) * g + O;
+          var I = e[m], w = r[m];
+          y[m] = (w - I) * g + I;
         }), n.translate(y), l && n.hooks.trigger(n.hooks.eventTypes.move, y), n.pending && (n.timer = Pe(u)), n.pending || (n.callStopWhenPending ? n.callStopWhenPending = !1 : n.hooks.trigger(n.hooks.eventTypes.end, r));
       };
       this.setPending(!0), this.callStopWhenPending && this.setCallStop(!1), st(this.timer), u();
@@ -1696,11 +1696,11 @@ var Ve = (
         t.enabled && !e._constructed && t.handleClick(e);
       });
     }, o.prototype.handleStart = function(t) {
-      var e = N();
+      var e = W();
       this.fingerMoved = !1, this.contentMoved = !1, this.startTime = e, this.directionLockAction.reset(), this.scrollBehaviorX.start(), this.scrollBehaviorY.start(), this.animater.doStop(), this.scrollBehaviorX.resetStartPos(), this.scrollBehaviorY.resetStartPos(), this.hooks.trigger(this.hooks.eventTypes.start, t);
     }, o.prototype.handleMove = function(t, e, r) {
       if (!this.hooks.trigger(this.hooks.eventTypes.beforeMove, r)) {
-        var i = this.scrollBehaviorX.getAbsDist(t), s = this.scrollBehaviorY.getAbsDist(e), n = N();
+        var i = this.scrollBehaviorX.getAbsDist(t), s = this.scrollBehaviorY.getAbsDist(e), n = W();
         if (this.checkMomentum(i, s, n))
           return !0;
         if (this.directionLockAction.checkMovingDirection(i, s, r))
@@ -1724,14 +1724,14 @@ var Ve = (
         var e = this.getCurrentPos();
         if (this.scrollBehaviorX.updateDirection(), this.scrollBehaviorY.updateDirection(), this.hooks.trigger(this.hooks.eventTypes.end, t, e))
           return !0;
-        e = this.ensureIntegerPos(e), this.animater.translate(e), this.endTime = N();
+        e = this.ensureIntegerPos(e), this.animater.translate(e), this.endTime = W();
         var r = this.endTime - this.startTime;
         this.hooks.trigger(this.hooks.eventTypes.scrollEnd, e, r);
       }
     }, o.prototype.ensureIntegerPos = function(t) {
       this.ensuringInteger = !0;
       var e = t.x, r = t.y, i = this.scrollBehaviorX, s = i.minScrollPos, n = i.maxScrollPos, a = this.scrollBehaviorY, c = a.minScrollPos, l = a.maxScrollPos;
-      return e = e > 0 ? Math.ceil(e) : Math.floor(e), r = r > 0 ? Math.ceil(r) : Math.floor(r), e = C(e, n, s), r = C(r, l, c), { x: e, y: r };
+      return e = e > 0 ? Math.ceil(e) : Math.floor(e), r = r > 0 ? Math.ceil(r) : Math.floor(r), e = O(e, n, s), r = O(r, l, c), { x: e, y: r };
     }, o.prototype.handleClick = function(t) {
       wt(t.target, this.options.preventDefaultException) || (vt(t), t.stopPropagation());
     }, o.prototype.getCurrentPos = function() {
@@ -1827,7 +1827,7 @@ var Ge = 1, fo = (
         position: "top"
       })), this.translater = new ro(this.content), this.animater = no(this.content, this.translater, this.options), this.actionsHandler = new eo(this.options.bindToTarget ? this.content : t, uo(this.options)), this.actions = new co(this.scrollBehaviorX, this.scrollBehaviorY, this.actionsHandler, this.animater, this.options);
       var l = this.resize.bind(this);
-      this.resizeRegister = new L(window, [
+      this.resizeRegister = new N(window, [
         {
           name: "orientationchange",
           handler: l
@@ -1844,9 +1844,9 @@ var Ge = 1, fo = (
         t.togglePointerEvents(!0);
       });
     }, o.prototype.registerTransitionEnd = function() {
-      this.transitionEndRegister = new L(this.content, [
+      this.transitionEndRegister = new N(this.content, [
         {
-          name: A.transitionEnd,
+          name: x.transitionEnd,
           handler: this.transitionEnd.bind(this)
         }
       ]);
@@ -1943,9 +1943,9 @@ var Ge = 1, fo = (
         var r = this.options.dblclick, i = !1;
         if (r && this.lastClickTime) {
           var s = r.delay, n = s === void 0 ? 300 : s;
-          N() - this.lastClickTime < n && (i = !0, Ur(t));
+          W() - this.lastClickTime < n && (i = !0, Ur(t));
         }
-        return this.options.tap && Wr(t, this.options.tap), this.options.click && !wt(t.target, this.options.preventDefaultException) && nr(t), this.lastClickTime = i ? null : N(), !0;
+        return this.options.tap && Wr(t, this.options.tap), this.options.click && !wt(t.target, this.options.preventDefaultException) && nr(t), this.lastClickTime = i ? null : W(), !0;
       }
       return !1;
     }, o.prototype.resize = function() {
@@ -1979,7 +1979,7 @@ var Ge = 1, fo = (
         start: {},
         end: {}
       });
-      var n = this.options.useTransition ? i.style : i.fn, a = this.getCurrentPos(), c = G({ x: a.x, y: a.y }, s.start), l = G({
+      var n = this.options.useTransition ? i.style : i.fn, a = this.getCurrentPos(), c = Q({ x: a.x, y: a.y }, s.start), l = Q({
         x: t,
         y: e
       }, s.end);
@@ -2053,20 +2053,20 @@ var Ge = 1, fo = (
         "destroy",
         "beforeInitialScrollTo",
         "contentChanged"
-      ]), i.init(s)), i) : (K("Can not resolve the wrapper DOM."), i);
+      ]), i.init(s)), i) : (G("Can not resolve the wrapper DOM."), i);
     }
     return t.use = function(e) {
       var r = e.pluginName, i = t.plugins.some(function(s) {
         return e === s.ctor;
       });
-      return i ? t : Te(r) ? (K("Plugin Class must specify plugin's name in static property by 'pluginName' field."), t) : (t.pluginsMap[r] = !0, t.plugins.push({
+      return i ? t : Te(r) ? (G("Plugin Class must specify plugin's name in static property by 'pluginName' field."), t) : (t.pluginsMap[r] = !0, t.plugins.push({
         name: r,
         applyOrder: e.applyOrder,
         ctor: e
       }), t);
     }, t.prototype.setContent = function(e) {
       var r = !1, i = !0, s = e.children[this.options.specifiedIndexAsContent];
-      return s ? (r = this.content !== s, r && (this.content = s)) : (K("The wrapper need at least one child element to be content element to scroll."), i = !1), {
+      return s ? (r = this.content !== s, r && (this.content = s)) : (G("The wrapper need at least one child element to be content element to scroll."), i = !1), {
         valid: i,
         contentChanged: r
       };
@@ -2164,7 +2164,7 @@ var ke = Jt, vo = (
     }, o.prototype.handleHooks = function() {
       this.hooksFn = [], this.registerHooks(this.scroll.hooks, "destroy", this.destroy);
     }, o.prototype.registerEvent = function() {
-      this.eventRegister = new L(this.scroll.scroller.wrapper, [
+      this.eventRegister = new N(this.scroll.scroller.wrapper, [
         {
           name: "wheel",
           handler: this.wheelHandler.bind(this)
@@ -2264,7 +2264,7 @@ var ke = Jt, vo = (
       r && !wt(t.target, s) && vt(t), i && t.stopPropagation();
     }, o.prototype.getEaseTime = function() {
       var t = 100, e = this.mouseWheelOpt.easeTime;
-      return e < t && K("easeTime should be greater than 100.If mouseWheel easeTime is too small,scrollEnd will be triggered many times."), Math.max(e, t);
+      return e < t && G("easeTime should be greater than 100.If mouseWheel easeTime is too small,scrollEnd will be triggered many times."), Math.max(e, t);
     }, o.prototype.destroy = function() {
       this.eventRegister.destroy(), window.clearTimeout(this.wheelEndTimer), window.clearTimeout(this.wheelMoveTimer), this.hooksFn.forEach(function(t) {
         var e = t[0], r = t[1], i = t[2];
@@ -2581,7 +2581,7 @@ var ke = Jt, vo = (
       }, {
         name: "touchcancel",
         handler: this.end.bind(this)
-      })), this.startEventRegister = new L(this.indicator.indicatorEl, i), this.moveEventRegister = new L(window, s), this.endEventRegister = new L(window, n);
+      })), this.startEventRegister = new N(this.indicator.indicatorEl, i), this.moveEventRegister = new N(window, s), this.endEventRegister = new N(window, n);
     }, o.prototype.BScrollIsDisabled = function() {
       return !this.indicator.scroll.enabled;
     }, o.prototype.start = function(t) {
@@ -2613,8 +2613,8 @@ var ke = Jt, vo = (
     }, o.prototype.handleHooks = function() {
       var t = this, e = this.options, r = e.fade, i = e.interactive, s = e.scrollbarTrackClickable, n = this.scroll, a = n.hooks, c = n.scroller.translater.hooks, l = n.scroller.animater.hooks;
       if (this.registerHooks(a, a.eventTypes.refresh, this.refresh), this.registerHooks(c, c.eventTypes.translate, function(m) {
-        var O = t.keysMap.hasScroll;
-        t.scroll[O] && t.updatePosition(m);
+        var I = t.keysMap.hasScroll;
+        t.scroll[I] && t.updatePosition(m);
       }), this.registerHooks(l, l.eventTypes.time, this.transitionTime), this.registerHooks(l, l.eventTypes.timeFunction, this.transitionTimingFunction), r && (this.registerHooks(n, n.eventTypes.scrollEnd, function() {
         t.fade();
       }), this.registerHooks(n, n.eventTypes.scrollStart, function() {
@@ -2639,7 +2639,7 @@ var ke = Jt, vo = (
       t.on(e, r, this), this.hooksFn.push([t, e, r]);
     }, o.prototype.bindClick = function() {
       var t = this.wrapper;
-      this.clickEventRegister = new L(t, [
+      this.clickEventRegister = new N(t, [
         {
           name: "click",
           handler: this.handleClick.bind(this)
@@ -2675,7 +2675,7 @@ var ke = Jt, vo = (
       };
     }, o.prototype.fade = function(t) {
       var e = this.options, r = e.fadeInTime, i = e.fadeOutTime, s = t ? r : i, n = this.wrapper;
-      n.style[A.transitionDuration] = s + "ms", n.style.opacity = t ? "1" : "0";
+      n.style[x.transitionDuration] = s + "ms", n.style.opacity = t ? "1" : "0";
     }, o.prototype.refresh = function() {
       var t = this.keysMap.hasScroll, e = this.scroll, r = e.x, i = e.y;
       if (this.wrapperRect = this.wrapper.getBoundingClientRect(), this.canScroll(e[t])) {
@@ -2686,9 +2686,9 @@ var ke = Jt, vo = (
         });
       }
     }, o.prototype.transitionTime = function(t) {
-      t === void 0 && (t = 0), this.indicatorEl.style[A.transitionDuration] = t + "ms";
+      t === void 0 && (t = 0), this.indicatorEl.style[x.transitionDuration] = t + "ms";
     }, o.prototype.transitionTimingFunction = function(t) {
-      this.indicatorEl.style[A.transitionTimingFunction] = t;
+      this.indicatorEl.style[x.transitionTimingFunction] = t;
     }, o.prototype.canScroll = function(t) {
       return this.wrapper.style.display = t ? "block" : "none", t;
     }, o.prototype.refreshScrollInfo = function(t, e, r, i) {
@@ -2712,9 +2712,9 @@ var ke = Jt, vo = (
       };
     }, o.prototype.refreshStyle = function(t, e) {
       var r = this.keysMap, i = r.translateProperty, s = r.size, n = this.scroll.options.translateZ;
-      this.indicatorEl.style[s] = t + "px", this.indicatorEl.style[A.transform] = i + "(" + e + "px)" + n;
+      this.indicatorEl.style[s] = t + "px", this.indicatorEl.style[x.transform] = i + "(" + e + "px)" + n;
     }, o.prototype.startHandler = function() {
-      this.moved = !1, this.startTime = N(), this.transitionTime(), this.scroll.scroller.hooks.trigger(this.scroll.scroller.hooks.eventTypes.beforeScrollStart);
+      this.moved = !1, this.startTime = W(), this.transitionTime(), this.scroll.scroller.hooks.trigger(this.scroll.scroller.hooks.eventTypes.beforeScrollStart);
     }, o.prototype.moveHandler = function(t) {
       if (!this.moved && !this.indicatorNotMoved(t) && (this.moved = !0, this.scroll.scroller.hooks.trigger(this.scroll.scroller.hooks.eventTypes.scrollStart)), this.moved) {
         var e = this.newPos(this.currentPos, t, this.scrollInfo);
@@ -2732,11 +2732,11 @@ var ke = Jt, vo = (
       var e = this.currentPos, r = this.scrollInfo, i = r.maxScrollPos, s = r.minScrollPos, n = e === s && t <= 0 || e === i && t >= 0;
       return n;
     }, o.prototype.syncBScroll = function(t) {
-      var e = N(), r = this.scroll, i = r.x, s = r.y, n = r.options, a = r.scroller, c = r.maxScrollY, l = r.minScrollY, u = r.maxScrollX, p = r.minScrollX, g = n.probeType, y = n.momentumLimitTime, m = { x: i, y: s };
-      this.direction === "vertical" ? m.y = C(t, c, l) : m.x = C(t, u, p), a.translater.translate(m), e - this.startTime > y && (this.startTime = e, g === 1 && a.hooks.trigger(a.hooks.eventTypes.scroll, m)), g > 1 && a.hooks.trigger(a.hooks.eventTypes.scroll, m);
+      var e = W(), r = this.scroll, i = r.x, s = r.y, n = r.options, a = r.scroller, c = r.maxScrollY, l = r.minScrollY, u = r.maxScrollX, p = r.minScrollX, g = n.probeType, y = n.momentumLimitTime, m = { x: i, y: s };
+      this.direction === "vertical" ? m.y = O(t, c, l) : m.x = O(t, u, p), a.translater.translate(m), e - this.startTime > y && (this.startTime = e, g === 1 && a.hooks.trigger(a.hooks.eventTypes.scroll, m)), g > 1 && a.hooks.trigger(a.hooks.eventTypes.scroll, m);
     }, o.prototype.newPos = function(t, e, r) {
       var i = r.maxScrollPos, s = r.sizeRatio, n = r.minScrollPos, a = t + e;
-      return a = C(a, n, i), Math.round(a / s);
+      return a = O(a, n, i), Math.round(a / s);
     }, o.prototype.destroy = function() {
       var t = this.options, e = t.interactive, r = t.scrollbarTrackClickable, i = t.isCustom;
       e && this.eventHandler.destroy(), r && this.clickEventRegister.destroy(), i || this.wrapper.parentNode.removeChild(this.wrapper), this.hooksFn.forEach(function(s) {
@@ -2780,7 +2780,7 @@ var ke = Jt, vo = (
         var c = i[a];
         if (e.options[c]) {
           var l = n.shift(), u = s[a], p = !1, g = l || this.createScrollbarElement(u);
-          g !== l ? e.wrapper.appendChild(g) : p = !0, t = G(G({ wrapper: g, direction: u }, this.options), { isCustom: p }), r.push(new xo(e, t));
+          g !== l ? e.wrapper.appendChild(g) : p = !0, t = Q(Q({ wrapper: g, direction: u }, this.options), { isCustom: p }), r.push(new xo(e, t));
         }
       }
       this.indicators = r;
@@ -2900,7 +2900,7 @@ var ke = Jt, vo = (
       return this.pagesMatrix.getPageStats(this.currentPage.pageX, this.currentPage.pageY);
     }, o.prototype.getValidPageIndex = function(t, e) {
       var r = this.pagesMatrix.pageLengthOfX - 1, i = this.pagesMatrix.pageLengthOfY - 1, s = 0, n = 0;
-      return this.loopX && (t += 1, s = s + 1, r = r - 1), this.loopY && (e += 1, n = n + 1, i = i - 1), t = C(t, s, r), e = C(e, n, i), {
+      return this.loopX && (t += 1, s = s + 1, r = r - 1), this.loopY && (e += 1, n = n + 1, i = i - 1), t = O(t, s, r), e = O(e, n, i), {
         pageX: t,
         pageY: e
       };
@@ -2924,7 +2924,7 @@ var ke = Jt, vo = (
       };
     }, o.prototype.getPageByDirection = function(t, e, r) {
       var i = t.pageX, s = t.pageY;
-      i === this.currentPage.pageX && (i = C(i + e, 0, this.pagesMatrix.pageLengthOfX - 1)), s === this.currentPage.pageY && (s = C(s + r, 0, this.pagesMatrix.pageLengthOfY - 1));
+      i === this.currentPage.pageX && (i = O(i + e, 0, this.pagesMatrix.pageLengthOfX - 1)), s === this.currentPage.pageY && (s = O(s + r, 0, this.pagesMatrix.pageLengthOfY - 1));
       var n = this.pagesMatrix.getPageStats(i, 0).x, a = this.pagesMatrix.getPageStats(0, s).y;
       return {
         x: n,
@@ -2964,7 +2964,7 @@ var ke = Jt, vo = (
         pageY: r
       };
     }, o.prototype.checkSlideLoop = function() {
-      this.wannaLoop = this.slideOptions.loop, this.pagesMatrix.pageLengthOfX > 1 ? this.slideX = !0 : this.slideX = !1, this.pagesMatrix.pages[0] && this.pagesMatrix.pageLengthOfY > 1 ? this.slideY = !0 : this.slideY = !1, this.loopX = this.wannaLoop && this.slideX, this.loopY = this.wannaLoop && this.slideY, this.slideX && this.slideY && K("slide does not support two direction at the same time.");
+      this.wannaLoop = this.slideOptions.loop, this.pagesMatrix.pageLengthOfX > 1 ? this.slideX = !0 : this.slideX = !1, this.pagesMatrix.pages[0] && this.pagesMatrix.pageLengthOfY > 1 ? this.slideY = !0 : this.slideY = !1, this.loopX = this.wannaLoop && this.slideX, this.loopY = this.wannaLoop && this.slideY, this.slideX && this.slideY && G("slide does not support two direction at the same time.");
     }, o;
   }()
 ), Do = "plugins.slide", Xo = [
@@ -3006,7 +3006,7 @@ var ke = Jt, vo = (
       this.scroll = t, this.cachedClonedPageDOM = [], this.resetLooping = !1, this.autoplayTimer = 0, this.satisfyInitialization() && this.init();
     }
     return o.prototype.satisfyInitialization = function() {
-      return this.scroll.scroller.content.children.length <= 0 ? (K("slide need at least one slide page to be initialised.please check your DOM layout."), !1) : !0;
+      return this.scroll.scroller.content.children.length <= 0 ? (G("slide need at least one slide page to be initialised.please check your DOM layout."), !1) : !0;
     }, o.prototype.init = function() {
       this.willChangeToPage = F({}, hr), this.handleBScroll(), this.handleOptions(), this.handleHooks(), this.createPages();
     }, o.prototype.createPages = function() {
@@ -3085,7 +3085,7 @@ var ke = Jt, vo = (
       this.pages.setCurrentPage(t), this.exposedPage = this.pages.getExposedPage(t);
     }, o.prototype.nearestPage = function(t, e) {
       var r = this.scroll.scroller, i = r.scrollBehaviorX, s = r.scrollBehaviorY, n = i.maxScrollPos, a = i.minScrollPos, c = s.maxScrollPos, l = s.minScrollPos;
-      return this.pages.getNearestPage(C(t, n, a), C(e, c, l));
+      return this.pages.getNearestPage(O(t, n, a), O(e, c, l));
     }, o.prototype.satisfyThreshold = function(t, e) {
       var r = this.scroll.scroller, i = r.scrollBehaviorX, s = r.scrollBehaviorY, n = !0;
       return Math.abs(t - i.absStartPos) <= this.thresholdX && Math.abs(e - s.absStartPos) <= this.thresholdY && (n = !1), n;
@@ -3276,14 +3276,14 @@ var ke = Jt, vo = (
       }
     }, o.prototype.transitionDuration = function(t) {
       for (var e = 0; e < this.items.length; e++)
-        this.items[e].style[A.transitionDuration] = t + "ms";
+        this.items[e].style[x.transitionDuration] = t + "ms";
     }, o.prototype.timeFunction = function(t) {
       for (var e = 0; e < this.items.length; e++)
-        this.items[e].style[A.transitionTimingFunction] = t;
+        this.items[e].style[x.transitionTimingFunction] = t;
     }, o.prototype.rotateX = function(t) {
       for (var e = this.options.rotate, r = e === void 0 ? 25 : e, i = 0; i < this.items.length; i++) {
         var s = r * (t / this.itemHeight + i), n = s.toFixed(3);
-        this.items[i].style[A.transform] = "rotateX(" + n + "deg)";
+        this.items[i].style[x.transform] = "rotateX(" + n + "deg)";
       }
     }, o.prototype.findNearestValidWheel = function(t) {
       t = t > 0 ? 0 : t < this.scroll.maxScrollY ? this.scroll.maxScrollY : t;
@@ -3383,7 +3383,7 @@ var ke = Jt, vo = (
         });
       }), this.registerHooks(this.scroll.hooks, "destroy", this.destroy);
     }, o.prototype.setTransformOrigin = function(t) {
-      t.style[A.transformOrigin] = "0 0";
+      t.style[x.transformOrigin] = "0 0";
     }, o.prototype.tryInitialZoomTo = function(t) {
       var e = t.start, r = t.initialOrigin, i = this.scroll.scroller, s = i.scrollBehaviorX, n = i.scrollBehaviorY;
       e !== Vt && (this.resetBoundaries([s, n]), this.zoomTo(e, r[0], r[1], 0));
@@ -3395,7 +3395,7 @@ var ke = Jt, vo = (
     }, o.prototype._doZoomTo = function(t, e, r, i) {
       var s = this;
       r === void 0 && (r = this.zoomOpt.bounceTime), i === void 0 && (i = !1);
-      var n = this.zoomOpt, a = n.min, c = n.max, l = this.scale, u = C(t, a, c);
+      var n = this.zoomOpt, a = n.min, c = n.max, l = this.scale, u = O(t, a, c);
       (function() {
         if (r === 0) {
           s.scroll.trigger(s.scroll.eventTypes.zooming, {
@@ -3404,17 +3404,17 @@ var ke = Jt, vo = (
           return;
         }
         if (r > 0) {
-          var p, g = N(), y = g + r, m = function() {
-            var O = N();
-            if (O >= y) {
+          var p, g = W(), y = g + r, m = function() {
+            var I = W();
+            if (I >= y) {
               s.scroll.trigger(s.scroll.eventTypes.zooming, {
                 scale: u
               }), st(p);
               return;
             }
-            var w = H.bounce.fn((O - g) / r), W = w * (u - l) + l;
+            var w = H.bounce.fn((I - g) / r), U = w * (u - l) + l;
             s.scroll.trigger(s.scroll.eventTypes.zooming, {
-              scale: W
+              scale: U
             }), p = Pe(m);
           };
           m();
@@ -3490,7 +3490,7 @@ var ke = Jt, vo = (
       return Cr(i, s);
     }, o.prototype.shouldRebound = function() {
       var t = this.zoomOpt, e = t.min, r = t.max, i = this.scale;
-      if (i !== C(i, e, r))
+      if (i !== O(i, e, r))
         return !0;
       var s = this.scroll.scroller, n = s.scrollBehaviorX, a = s.scrollBehaviorY;
       this.resetBoundaries([n, a]);
@@ -3508,7 +3508,7 @@ var ke = Jt, vo = (
     }, o.prototype.getNewPos = function(t, e, r, i, s) {
       s === void 0 && (s = !1);
       var n = t - t * e + (s ? r.currentPos : r.startPos);
-      return i && (n = C(n, r.maxScrollPos, r.minScrollPos)), n > 0 ? Math.floor(n) : Math.ceil(n);
+      return i && (n = O(n, r.maxScrollPos, r.minScrollPos)), n > 0 ? Math.floor(n) : Math.ceil(n);
     }, o.prototype.registerHooks = function(t, e, r) {
       t.on(e, r, this), this.hooksFn.push([t, e, r]);
     }, o.prototype.destroy = function() {
@@ -3614,8 +3614,8 @@ var ke = Jt, vo = (
     r.fingerMoved = !0, r.contentMoved = !1, r.directionLockAction.reset(), i.start(), s.start(), i.resetStartPos(), s.resetStartPos(), r.startTime = +/* @__PURE__ */ new Date();
   });
 }, _o = function(o) {
-  var t = o.hasHorizontalScroll, e = o.hasVerticalScroll, r = o.x, i = o.y, s = o.minScrollX, n = o.maxScrollX, a = o.minScrollY, c = o.maxScrollY, l = o.movingDirectionX, u = o.movingDirectionY, p = !1, g = r >= s && l === -1, y = r <= n && l === 1, m = i >= a && u === -1, O = i <= c && u === 1;
-  return e ? p = m || O : t && (p = g || y), p;
+  var t = o.hasHorizontalScroll, e = o.hasVerticalScroll, r = o.x, i = o.y, s = o.minScrollX, n = o.maxScrollX, a = o.minScrollY, c = o.maxScrollY, l = o.movingDirectionX, u = o.movingDirectionY, p = !1, g = r >= s && l === -1, y = r <= n && l === 1, m = i >= a && u === -1, I = i <= c && u === 1;
+  return e ? p = m || I : t && (p = g || y), p;
 }, $o = function(o) {
   var t = o.hasHorizontalScroll, e = o.hasVerticalScroll, r = o.x, i = o.y, s = o.minScrollX, n = o.maxScrollX, a = o.minScrollY, c = o.maxScrollY, l = !1, u = r > s, p = r < n, g = i > a, y = i < c;
   return e ? l = g || y : t && (l = u || p), l;
@@ -3651,7 +3651,7 @@ var ke = Jt, vo = (
       };
       this.options = F(r, e);
       var i = typeof this.options.groupId;
-      return i !== "string" && i !== "number" && K("groupId must be string or number for NestedScroll plugin"), this.options.groupId;
+      return i !== "string" && i !== "number" && G("groupId must be string or number for NestedScroll plugin"), this.options.groupId;
     }, o.prototype.init = function(t) {
       t.proxy(Go), this.addBScroll(t), this.buildBScrollGraph(), this.analyzeBScrollGraph(), this.ensureEventInvokeSequence(), this.handleHooks(t);
     }, o.prototype.handleHooks = function(t) {
@@ -3800,7 +3800,7 @@ var ke = Jt, vo = (
       });
     }, o.prototype.add = function(t) {
       for (var e = 0; e < t.length; e++)
-        this.list[this.loadedNum] ? this.list[this.loadedNum] = G(G({}, this.list[this.loadedNum]), { data: t[e] }) : this.list[this.loadedNum] = { data: t[e] }, this.loadedNum++;
+        this.list[this.loadedNum] ? this.list[this.loadedNum] = Q(Q({}, this.list[this.loadedNum]), { data: t[e] }) : this.list[this.loadedNum] = { data: t[e] }, this.loadedNum++;
       return this.list;
     }, o.prototype.addEmptyData = function(t) {
       for (var e = 0; e < t; e++)
@@ -3862,7 +3862,7 @@ var ke = Jt, vo = (
       var t = this.cached.pop();
       if (t) {
         var e = t.style;
-        return e.display = "", e.opacity = "1", e[A.transform] = "", e[A.transition] = "", t;
+        return e.display = "", e.opacity = "1", e[x.transform] = "", e[x.transition] = "", t;
       }
       return this.create();
     }, o.prototype.recycle = function(t) {
@@ -3921,9 +3921,9 @@ var ke = Jt, vo = (
         var p = t[u].tombstone;
         if (p) {
           var g = p.style;
-          g[A.transition] = Hr + "transform " + ve + "ms, opacity " + ve + "ms", g[A.transform] = "translateY(" + l + "px)", g.opacity = "0", t[u].tombstone = null, s.push(p);
+          g[x.transition] = Hr + "transform " + ve + "ms, opacity " + ve + "ms", g[x.transform] = "translateY(" + l + "px)", g.opacity = "0", t[u].tombstone = null, s.push(p);
         }
-        t[u].dom && t[u].pos !== l && (t[u].dom.style[A.transform] = "translateY(" + l + "px)", t[u].pos = l), l += t[u].height || this.tombstone.height;
+        t[u].dom && t[u].pos !== l && (t[u].dom.style[x.transform] = "translateY(" + l + "px)", t[u].pos = l), l += t[u].height || this.tombstone.height;
       }
       var y = window.setTimeout(function() {
         i.tombstone.recycle(s);
@@ -3988,7 +3988,7 @@ var ke = Jt, vo = (
       t.maxScrollPos = ai;
     }, o.prototype.handleOptions = function() {
       var t = this.scroll.options.infinity;
-      t && (typeof t.fetch != "function" && K("Infinity plugin need fetch Function to new data."), typeof t.render != "function" && K("Infinity plugin need render Function to render each item."), typeof t.render != "function" && K("Infinity plugin need createTombstone Function to create tombstone."), this.options = t), this.scroll.options.probeType = 3;
+      t && (typeof t.fetch != "function" && G("Infinity plugin need fetch Function to new data."), typeof t.render != "function" && G("Infinity plugin need render Function to render each item."), typeof t.render != "function" && G("Infinity plugin need createTombstone Function to create tombstone."), this.options = t), this.scroll.options.probeType = 3;
     }, o.prototype.update = function(t) {
       var e = Math.round(-t.y), r = this.indexCalculator.calculate(e, this.dataManager.getList()), i = r.start, s = r.end;
       this.start = i, this.end = s, this.dataManager.update(s), this.updateDom(this.dataManager.getList());
@@ -4097,13 +4097,13 @@ var ke = Jt, vo = (
       this.options = F(e, t);
     }, o.prototype.bindEventsToWrapper = function() {
       var t = this.scroll.scroller.wrapper;
-      this.imageLoadEventRegister = new L(t, [
+      this.imageLoadEventRegister = new N(t, [
         {
           name: "load",
           handler: this.load.bind(this),
           capture: !0
         }
-      ]), this.imageErrorEventRegister = new L(t, [
+      ]), this.imageErrorEventRegister = new N(t, [
         {
           name: "error",
           handler: this.load.bind(this),
@@ -4143,9 +4143,9 @@ var ke = Jt, vo = (
         t.updatePosition(n);
       }), this.registerHooks(s, s.eventTypes.time, this.transitionTime), this.registerHooks(s, s.eventTypes.timeFunction, this.transitionTimingFunction);
     }, o.prototype.transitionTime = function(t) {
-      t === void 0 && (t = 0), this.indicatorEl.style[A.transitionDuration] = t + "ms";
+      t === void 0 && (t = 0), this.indicatorEl.style[x.transitionDuration] = t + "ms";
     }, o.prototype.transitionTimingFunction = function(t) {
-      this.indicatorEl.style[A.transitionTimingFunction] = t;
+      this.indicatorEl.style[x.transitionTimingFunction] = t;
     }, o.prototype.handleInteractive = function() {
       this.options.interactive !== !1 && this.registerEvents();
     }, o.prototype.registerHooks = function(t, e, r) {
@@ -4173,17 +4173,17 @@ var ke = Jt, vo = (
       }, {
         name: "touchcancel",
         handler: this.end.bind(this)
-      })), this.startEventRegister = new L(this.indicatorEl, i), this.moveEventRegister = new L(window, s), this.endEventRegister = new L(window, n);
+      })), this.startEventRegister = new N(this.indicatorEl, i), this.moveEventRegister = new N(window, s), this.endEventRegister = new N(window, n);
     }, o.prototype.refresh = function() {
-      var t = this.scroll, e = t.x, r = t.y, i = t.hasHorizontalScroll, s = t.hasVerticalScroll, n = t.maxScrollX, a = t.maxScrollY, c = vi(this.options.ratio), l = c.ratioX, u = c.ratioY, p = Gr(this.wrapper), g = p.width, y = p.height, m = gt(this.indicatorEl), O = m.width, w = m.height;
-      i && (this.maxScrollX = g - O, this.translateXSign = this.maxScrollX > 0 ? -1 : 1, this.minScrollX = 0, this.ratioX = l || Math.abs(this.maxScrollX / n)), s && (this.maxScrollY = y - w, this.translateYSign = this.maxScrollY > 0 ? -1 : 1, this.minScrollY = 0, this.ratioY = u || Math.abs(this.maxScrollY / a)), this.updatePosition({
+      var t = this.scroll, e = t.x, r = t.y, i = t.hasHorizontalScroll, s = t.hasVerticalScroll, n = t.maxScrollX, a = t.maxScrollY, c = vi(this.options.ratio), l = c.ratioX, u = c.ratioY, p = Gr(this.wrapper), g = p.width, y = p.height, m = gt(this.indicatorEl), I = m.width, w = m.height;
+      i && (this.maxScrollX = g - I, this.translateXSign = this.maxScrollX > 0 ? -1 : 1, this.minScrollX = 0, this.ratioX = l || Math.abs(this.maxScrollX / n)), s && (this.maxScrollY = y - w, this.translateYSign = this.maxScrollY > 0 ? -1 : 1, this.minScrollY = 0, this.ratioY = u || Math.abs(this.maxScrollY / a)), this.updatePosition({
         x: e,
         y: r
       });
     }, o.prototype.start = function(t) {
       if (!this.BScrollIsDisabled()) {
         var e = t.touches ? t.touches[0] : t;
-        ge(t), this.initiated = !0, this.moved = !1, this.lastPointX = e.pageX, this.lastPointY = e.pageY, this.startTime = N(), this.scroll.scroller.hooks.trigger(this.scroll.scroller.hooks.eventTypes.beforeScrollStart);
+        ge(t), this.initiated = !0, this.moved = !1, this.lastPointX = e.pageX, this.lastPointY = e.pageY, this.startTime = W(), this.scroll.scroller.hooks.trigger(this.scroll.scroller.hooks.eventTypes.beforeScrollStart);
       }
     }, o.prototype.BScrollIsDisabled = function() {
       return !this.scroll.enabled;
@@ -4206,41 +4206,41 @@ var ke = Jt, vo = (
         });
       }
     }, o.prototype.getBScrollPosByRatio = function(t, e, r) {
-      var i = t.x, s = t.y, n = this.scroll, a = n.hasHorizontalScroll, c = n.hasVerticalScroll, l = n.minScrollX, u = n.maxScrollX, p = n.minScrollY, g = n.maxScrollY, y = this.scroll, m = y.x, O = y.y;
+      var i = t.x, s = t.y, n = this.scroll, a = n.hasHorizontalScroll, c = n.hasVerticalScroll, l = n.minScrollX, u = n.maxScrollX, p = n.minScrollY, g = n.maxScrollY, y = this.scroll, m = y.x, I = y.y;
       if (a) {
-        var w = C(i + e, Math.min(this.minScrollX, this.maxScrollX), Math.max(this.minScrollX, this.maxScrollX)), W = Math.round(w / this.ratioX * this.translateXSign);
-        m = C(W, u, l);
+        var w = O(i + e, Math.min(this.minScrollX, this.maxScrollX), Math.max(this.minScrollX, this.maxScrollX)), U = Math.round(w / this.ratioX * this.translateXSign);
+        m = O(U, u, l);
       }
       if (c) {
-        var M = C(s + r, Math.min(this.minScrollY, this.maxScrollY), Math.max(this.minScrollY, this.maxScrollY)), nt = Math.round(M / this.ratioY * this.translateYSign);
-        O = C(nt, g, p);
+        var A = O(s + r, Math.min(this.minScrollY, this.maxScrollY), Math.max(this.minScrollY, this.maxScrollY)), nt = Math.round(A / this.ratioY * this.translateYSign);
+        I = O(nt, g, p);
       }
-      return { x: m, y: O };
+      return { x: m, y: I };
     }, o.prototype.indicatorNotMoved = function(t, e) {
       var r = this.currentPos, i = r.x, s = r.y, n = i === this.minScrollX && t <= 0 || i === this.maxScrollX && t >= 0, a = s === this.minScrollY && e <= 0 || s === this.maxScrollY && e >= 0;
       return n && a;
     }, o.prototype.syncBScroll = function(t) {
-      var e = N(), r = this.scroll, i = r.options, s = r.scroller, n = i.probeType, a = i.momentumLimitTime;
+      var e = W(), r = this.scroll, i = r.options, s = r.scroller, n = i.probeType, a = i.momentumLimitTime;
       s.translater.translate(t), e - this.startTime > a && (this.startTime = e, n === 1 && s.hooks.trigger(s.hooks.eventTypes.scroll, t)), n > 1 && s.hooks.trigger(s.hooks.eventTypes.scroll, t);
     }, o.prototype.updatePosition = function(t) {
       var e = this.getIndicatorPosByRatio(t);
-      this.applyTransformProperty(e), this.currentPos = G({}, e);
+      this.applyTransformProperty(e), this.currentPos = Q({}, e);
     }, o.prototype.applyTransformProperty = function(t) {
       var e = this.scroll.options.translateZ, r = [
         "translateX(" + t.x + "px)",
         "translateY(" + t.y + "px)",
         "" + e
       ];
-      this.indicatorEl.style[A.transform] = r.join(" ");
+      this.indicatorEl.style[x.transform] = r.join(" ");
     }, o.prototype.getIndicatorPosByRatio = function(t) {
-      var e = t.x, r = t.y, i = this.scroll, s = i.hasHorizontalScroll, n = i.hasVerticalScroll, a = G({}, this.currentPos);
+      var e = t.x, r = t.y, i = this.scroll, s = i.hasHorizontalScroll, n = i.hasVerticalScroll, a = Q({}, this.currentPos);
       if (s) {
         var c = Math.round(this.ratioX * e * this.translateXSign);
-        a.x = C(c, Math.min(this.minScrollX, this.maxScrollX), Math.max(this.minScrollX, this.maxScrollX));
+        a.x = O(c, Math.min(this.minScrollX, this.maxScrollX), Math.max(this.minScrollX, this.maxScrollX));
       }
       if (n) {
         var l = Math.round(this.ratioY * r * this.translateYSign);
-        a.y = C(l, Math.min(this.minScrollY, this.maxScrollY), Math.max(this.minScrollY, this.maxScrollY));
+        a.y = O(l, Math.min(this.minScrollY, this.maxScrollY), Math.max(this.minScrollY, this.maxScrollY));
       }
       return a;
     }, o.prototype.destroy = function() {
@@ -4282,8 +4282,8 @@ const mi = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAA
 function Pi(o) {
   var ft, dt;
   const t = _(null), e = _(null), r = _(null), i = o.ImgList;
-  let [s, n] = kt(0), [a, c] = kt(1), [l, u] = kt(0), [p, g] = kt(0), [y, m] = kt(0), O = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|OperaMini/i.test(window.navigator.userAgent) || document.documentElement.clientWidth < 744, [w, W] = kt(i.length == 1 || O ? "h" : o.toolInfo.layout);
-  const M = _(null), nt = (ft = M.current) == null ? void 0 : ft.clientHeight, xt = (dt = M.current) == null ? void 0 : dt.clientWidth;
+  let [s, n] = kt(0), [a, c] = kt(1), [l, u] = kt(0), [p, g] = kt(0), [y, m] = kt(0), I = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|OperaMini/i.test(window.navigator.userAgent) || document.documentElement.clientWidth < 744, [w, U] = kt(i.length == 1 || I ? "h" : o.toolInfo.layout);
+  const A = _(null), nt = (ft = A.current) == null ? void 0 : ft.clientHeight, xt = (dt = A.current) == null ? void 0 : dt.clientWidth;
   Re(() => {
     console.log(nt, xt), g(nt), m(xt);
   }, [nt, xt]);
@@ -4306,25 +4306,25 @@ function Pi(o) {
   function $t(d) {
     n(d), o.toolInfo.smallClickFunc(i[d], d);
   }
-  const U = _(null), At = (d) => {
+  const j = _(null), At = (d) => {
     let S = d || w;
-    o.ImgList.length > 1 && (S == "h" ? U.current = new ke(".small-list", {
+    o.ImgList.length > 1 && (S == "h" ? j.current = new ke(".small-list", {
       scrollX: !0,
       eventPassthrough: "vertical",
       probeType: 3
-    }) : U.current = new ke(".small-list", {
+    }) : j.current = new ke(".small-list", {
       scrollY: !0,
       probeType: 3
-    }), U.current.refresh());
+    }), j.current.refresh());
   };
-  let j = _([]);
+  let V = _([]);
   Re(() => {
     var d;
-    o.ImgList.length !== ((d = j.current) == null ? void 0 : d.length) && At(), j.current = r.current ? Array.from(r.current) : null;
+    o.ImgList.length !== ((d = V.current) == null ? void 0 : d.length) && At(), V.current = r.current ? Array.from(r.current) : null;
   }, [o.ImgList]);
   async function te() {
     let d = w;
-    w == "h" ? d = "v" : d = "h", W(d), U.current.scrollTo(0, 0, 300), setTimeout(() => {
+    w == "h" ? d = "v" : d = "h", U(d), j.current.scrollTo(0, 0, 300), setTimeout(() => {
       At(d);
     }, 2e3);
   }
@@ -4334,44 +4334,44 @@ function Pi(o) {
         n(i.length - 1);
         return;
       }
-      n(++s), w == "v" && j.current[s] ? q() : j.current[s] && at();
+      n(++s), w == "v" && V.current[s] ? K() : V.current[s] && at();
     } else if (d == "l") {
       if (s <= 0) {
         n(0);
         return;
       }
-      n(--s), w == "v" && j.current[s] ? tt() : j.current[s] && Ct();
+      n(--s), w == "v" && V.current[s] ? tt() : V.current[s] && Ct();
     }
     o.toolInfo.arrowFunc(s);
   }
-  function q() {
-    let d = j.current[s][1], S = lt(d, 10, p - 10, "bottom", "top");
-    console.log(S, p - d.offsetTop - 100), S[0] === "lower" ? U.current.scrollTo(0, p - d.offsetTop - 100, 300) : (S[0] === "upper" || S[2] < 92) && U.current.scrollTo(0, -d.offsetTop + 28, 300);
+  function K() {
+    let d = V.current[s][1], S = lt(d, 10, p - 10, "bottom", "top");
+    console.log(S, p - d.offsetTop - 100), S[0] === "lower" ? j.current.scrollTo(0, p - d.offsetTop - 100, 300) : (S[0] === "upper" || S[2] < 92) && j.current.scrollTo(0, -d.offsetTop + 28, 300);
   }
   function tt() {
-    let d = j.current[s][1];
-    lt(d, 10, p - 10, "top")[0] === "upper" && U.current.scrollTo(0, -d.offsetTop, 300);
+    let d = V.current[s][1];
+    lt(d, 10, p - 10, "top")[0] === "upper" && j.current.scrollTo(0, -d.offsetTop, 300);
   }
   function at() {
-    let d = j.current[s][1], S = lt(d, 0, y, "right", "left");
-    S[0] === "right" ? U.current.scrollTo(y - d.offsetLeft - 120, 0, 300) : (S[0] === "left" || S[2] < 92) && U.current.scrollTo(-d.offsetLeft + 28, 0, 300);
+    let d = V.current[s][1], S = lt(d, 0, y, "right", "left");
+    S[0] === "right" ? j.current.scrollTo(y - d.offsetLeft - 120, 0, 300) : (S[0] === "left" || S[2] < 92) && j.current.scrollTo(-d.offsetLeft + 28, 0, 300);
   }
   function Ct() {
-    let d = j.current[s][1];
-    lt(d, 10, y, "left")[0] === "left" && U.current.scrollTo(-d.offsetLeft, 0, 300);
+    let d = V.current[s][1];
+    lt(d, 10, y, "left")[0] === "left" && j.current.scrollTo(-d.offsetLeft, 0, 300);
   }
-  function lt(d, S, x, I, J) {
+  function lt(d, S, B, D, L) {
     var Ft;
-    const D = d.getBoundingClientRect(), Ht = (Ft = M.current) == null ? void 0 : Ft.getBoundingClientRect();
-    return console.log(D), [
-      D[I] < Ht.left ? "left" : D[I] < Ht.right ? "in" : "right",
-      D[I],
-      D[J]
+    const X = d.getBoundingClientRect(), Ht = (Ft = A.current) == null ? void 0 : Ft.getBoundingClientRect();
+    return console.log(X), [
+      X[D] < Ht.left ? "left" : X[D] < Ht.right ? "in" : "right",
+      X[D],
+      X[L]
     ];
   }
   function Ot(d) {
-    const S = Math.sign(-d.deltaY), x = a + 0.1 * S;
-    c(x), (x <= 0.1 || x >= 10) && c(Math.max(Math.min(x, 10), 0.1)), d.target.style.transform = `translateX(-50%) translateY(-50%) scale(${x}) rotate(${l}deg)`;
+    const S = Math.sign(-d.deltaY), B = a + 0.1 * S, D = Math.round(B * 100) / 100, L = Math.max(D, 0.1);
+    c(L), console.log(L), d.target.style.transform = `translateX(-50%) translateY(-50%) scale(${L}) rotate(${l}deg)`;
   }
   function Yt(d) {
     console.log(d);
@@ -4382,21 +4382,21 @@ function Pi(o) {
     const d = l + 90;
     u(d), e.current.style.transform = `translateX(-50%) translateY(-50%) scale(${a}) rotate(${d}deg)`;
   }
-  let Q = !1, ht = 0, ct = 0;
+  let Z = !1, ht = 0, ct = 0;
   function ee(d) {
-    let S = d.target, x = d.pageX - S.offsetLeft, I = d.pageY - S.offsetTop;
-    Q = !1, ht = d.clientX, ct = d.clientY, t.current.addEventListener("mousemove", J);
-    function J(D) {
-      Math.abs(D.clientX - ht) > 10 || Math.abs(D.clientY - ct) > 10 ? (Q = !0, S.style.left = D.pageX - x + "px", S.style.top = D.pageY - I + "px") : Q = !1;
+    let S = d.target, B = d.pageX - S.offsetLeft, D = d.pageY - S.offsetTop;
+    Z = !1, ht = d.clientX, ct = d.clientY, t.current.addEventListener("mousemove", L);
+    function L(X) {
+      Math.abs(X.clientX - ht) > 10 || Math.abs(X.clientY - ct) > 10 ? (Z = !0, S.style.left = X.pageX - B + "px", S.style.top = X.pageY - D + "px") : Z = !1;
     }
-    window.addEventListener("mouseup", (D) => {
-      Q || o.toolInfo.clickFunc(D.target.currentSrc), t.current.removeEventListener("mousemove", J);
+    window.addEventListener("mouseup", (X) => {
+      Z || o.toolInfo.clickFunc(X.target.currentSrc), t.current.removeEventListener("mousemove", L);
     });
   }
-  let Y = null;
-  const Z = _(null), yt = _(0), ut = _(0), pt = _(1);
+  let M = null;
+  const J = _(null), yt = _(0), ut = _(0), pt = _(1);
   function mt(d) {
-    Z.current = d.target, pt.current = d.touches.length, pt.current == 1 ? (yt.current = d.changedTouches[0].clientX - Z.current.offsetLeft, ut.current = d.changedTouches[0].clientY - Z.current.offsetTop, Q = !1, ht = d.changedTouches[0].clientX, ct = d.changedTouches[0].clientX) : Y = {
+    J.current = d.target, pt.current = d.touches.length, pt.current == 1 ? (yt.current = d.changedTouches[0].clientX - J.current.offsetLeft, ut.current = d.changedTouches[0].clientY - J.current.offsetTop, Z = !1, ht = d.changedTouches[0].clientX, ct = d.changedTouches[0].clientX) : M = {
       //多点触屏的第一点
       startX: d.touches[0].pageX,
       startY: d.touches[0].pageY,
@@ -4410,24 +4410,24 @@ function Pi(o) {
     };
   }
   function re(d) {
-    if (Z.current, pt.current == 1) {
-      let x = d.changedTouches[0].clientX, I = d.changedTouches[0].clientY;
-      if (Math.abs(x - ht) > 10 || Math.abs(I - ct) > 10) {
-        Q = !0;
-        const J = x - yt.current, D = I - ut.current;
-        Z.current.style.left = J + "px", Z.current.style.top = D + "px";
+    if (J.current, pt.current == 1) {
+      let B = d.changedTouches[0].clientX, D = d.changedTouches[0].clientY;
+      if (Math.abs(B - ht) > 10 || Math.abs(D - ct) > 10) {
+        Z = !0;
+        const L = B - yt.current, X = D - ut.current;
+        J.current.style.left = L + "px", J.current.style.top = X + "px";
       } else
-        Q = !1;
+        Z = !1;
     } else {
-      if (Y === null)
+      if (M === null)
         return;
-      Y.endX = d.touches[0].pageX, Y.endY = d.touches[0].pageY, Y.endX2 = d.touches[1] ? d.touches[1].pageX : -1, Y.endY2 = d.touches[1] ? d.touches[1].pageY : -1;
-      var S = function(x, I, J, D) {
-        return Math.hypot(J - x, D - I);
+      M.endX = d.touches[0].pageX, M.endY = d.touches[0].pageY, M.endX2 = d.touches[1] ? d.touches[1].pageX : -1, M.endY2 = d.touches[1] ? d.touches[1].pageY : -1;
+      var S = function(B, D, L, X) {
+        return Math.hypot(L - B, X - D);
       };
-      if (Y.startX2 != -1 && Y.endX2 != -1 && Y.startY2 != -1 && Y.endY2 != -1) {
-        let x = S(Y.startX, Y.startY, Y.startX2, Y.startY2), I = S(Y.endX, Y.endY, Y.endX2, Y.endY2);
-        x < I ? a <= 4 && (a += 0.03) : x > I && a >= 0.6 && (a -= 0.03), oe(a, d);
+      if (M.startX2 != -1 && M.endX2 != -1 && M.startY2 != -1 && M.endY2 != -1) {
+        let B = S(M.startX, M.startY, M.startX2, M.startY2), D = S(M.endX, M.endY, M.endX2, M.endY2);
+        B < D ? a <= 4 && (a += 0.03) : B > D && a >= 0.6 && (a -= 0.03), oe(a, d);
       }
     }
   }
@@ -4439,8 +4439,8 @@ function Pi(o) {
   function ie() {
     return r.current || (r.current = /* @__PURE__ */ new Map()), r.current;
   }
-  return /* @__PURE__ */ R.jsx(R.Fragment, { children: /* @__PURE__ */ R.jsxs("div", { className: "container " + (w == "h" ? "active" : ""), ref: M, children: [
-    o.toolInfo.layoutChange && o.ImgList.length > 1 && !O ? /* @__PURE__ */ R.jsxs("div", { onClick: te, className: "horv " + (w == "h" ? "active" : ""), children: [
+  return /* @__PURE__ */ R.jsx(R.Fragment, { children: /* @__PURE__ */ R.jsxs("div", { className: "container " + (w == "h" ? "active" : ""), ref: A, children: [
+    o.toolInfo.layoutChange && o.ImgList.length > 1 && !I ? /* @__PURE__ */ R.jsxs("div", { onClick: te, className: "horv " + (w == "h" ? "active" : ""), children: [
       /* @__PURE__ */ R.jsx("div", { className: "v" }),
       /* @__PURE__ */ R.jsx("div", { className: "h" })
     ] }) : "",
@@ -4476,9 +4476,9 @@ function Pi(o) {
             {
               src: d,
               onClick: $t.bind(null, S),
-              ref: (x) => {
-                const I = ie();
-                x ? I.set(d, x) : I.delete(d);
+              ref: (B) => {
+                const D = ie();
+                B ? D.set(d, B) : D.delete(d);
               },
               className: (S == s ? "imgA " : "") + (w == "h" ? "active" : "")
             },
