@@ -41,11 +41,11 @@ var Xt = {};
 var ze;
 function Ar() {
   return ze || (ze = 1, process.env.NODE_ENV !== "production" && function() {
-    var o = rr, t = Symbol.for("react.element"), e = Symbol.for("react.portal"), r = Symbol.for("react.fragment"), i = Symbol.for("react.strict_mode"), s = Symbol.for("react.profiler"), n = Symbol.for("react.provider"), a = Symbol.for("react.context"), c = Symbol.for("react.forward_ref"), l = Symbol.for("react.suspense"), u = Symbol.for("react.suspense_list"), p = Symbol.for("react.memo"), g = Symbol.for("react.lazy"), y = Symbol.for("react.offscreen"), m = Symbol.iterator, I = "@@iterator";
+    var o = rr, t = Symbol.for("react.element"), e = Symbol.for("react.portal"), r = Symbol.for("react.fragment"), i = Symbol.for("react.strict_mode"), s = Symbol.for("react.profiler"), n = Symbol.for("react.provider"), a = Symbol.for("react.context"), c = Symbol.for("react.forward_ref"), l = Symbol.for("react.suspense"), u = Symbol.for("react.suspense_list"), p = Symbol.for("react.memo"), g = Symbol.for("react.lazy"), y = Symbol.for("react.offscreen"), m = Symbol.iterator, R = "@@iterator";
     function w(h) {
       if (h === null || typeof h != "object")
         return null;
-      var f = m && h[m] || h[I];
+      var f = m && h[m] || h[R];
       return typeof f == "function" ? f : null;
     }
     var U = o.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
@@ -626,7 +626,7 @@ Check the top-level render call using <` + v + ">.");
   }()), Xt;
 }
 process.env.NODE_ENV === "production" ? ye.exports = xr() : ye.exports = Ar();
-var R = ye.exports;
+var O = ye.exports;
 /*!
  * better-scroll / better-scroll
  * (c) 2016-2023 ustbhuangyi
@@ -903,7 +903,7 @@ function Te(o) {
 function Cr(o, t) {
   return Math.sqrt(o * o + t * t);
 }
-function O(o, t, e) {
+function I(o, t, e) {
   return o < t ? t : o > e ? e : o;
 }
 function bt(o, t) {
@@ -1498,8 +1498,8 @@ var ot = (
         p = (p - a) / i;
         var g = s(p), y = {};
         Object.keys(r).forEach(function(m) {
-          var I = e[m], w = r[m];
-          y[m] = (w - I) * g + I;
+          var R = e[m], w = r[m];
+          y[m] = (w - R) * g + R;
         }), n.translate(y), l && n.hooks.trigger(n.hooks.eventTypes.move, y), n.pending && (n.timer = Pe(u)), n.pending || (n.callStopWhenPending ? n.callStopWhenPending = !1 : n.hooks.trigger(n.hooks.eventTypes.end, r));
       };
       this.setPending(!0), this.callStopWhenPending && this.setCallStop(!1), st(this.timer), u();
@@ -1731,7 +1731,7 @@ var Ve = (
     }, o.prototype.ensureIntegerPos = function(t) {
       this.ensuringInteger = !0;
       var e = t.x, r = t.y, i = this.scrollBehaviorX, s = i.minScrollPos, n = i.maxScrollPos, a = this.scrollBehaviorY, c = a.minScrollPos, l = a.maxScrollPos;
-      return e = e > 0 ? Math.ceil(e) : Math.floor(e), r = r > 0 ? Math.ceil(r) : Math.floor(r), e = O(e, n, s), r = O(r, l, c), { x: e, y: r };
+      return e = e > 0 ? Math.ceil(e) : Math.floor(e), r = r > 0 ? Math.ceil(r) : Math.floor(r), e = I(e, n, s), r = I(r, l, c), { x: e, y: r };
     }, o.prototype.handleClick = function(t) {
       wt(t.target, this.options.preventDefaultException) || (vt(t), t.stopPropagation());
     }, o.prototype.getCurrentPos = function() {
@@ -2613,8 +2613,8 @@ var ke = Jt, vo = (
     }, o.prototype.handleHooks = function() {
       var t = this, e = this.options, r = e.fade, i = e.interactive, s = e.scrollbarTrackClickable, n = this.scroll, a = n.hooks, c = n.scroller.translater.hooks, l = n.scroller.animater.hooks;
       if (this.registerHooks(a, a.eventTypes.refresh, this.refresh), this.registerHooks(c, c.eventTypes.translate, function(m) {
-        var I = t.keysMap.hasScroll;
-        t.scroll[I] && t.updatePosition(m);
+        var R = t.keysMap.hasScroll;
+        t.scroll[R] && t.updatePosition(m);
       }), this.registerHooks(l, l.eventTypes.time, this.transitionTime), this.registerHooks(l, l.eventTypes.timeFunction, this.transitionTimingFunction), r && (this.registerHooks(n, n.eventTypes.scrollEnd, function() {
         t.fade();
       }), this.registerHooks(n, n.eventTypes.scrollStart, function() {
@@ -2733,10 +2733,10 @@ var ke = Jt, vo = (
       return n;
     }, o.prototype.syncBScroll = function(t) {
       var e = W(), r = this.scroll, i = r.x, s = r.y, n = r.options, a = r.scroller, c = r.maxScrollY, l = r.minScrollY, u = r.maxScrollX, p = r.minScrollX, g = n.probeType, y = n.momentumLimitTime, m = { x: i, y: s };
-      this.direction === "vertical" ? m.y = O(t, c, l) : m.x = O(t, u, p), a.translater.translate(m), e - this.startTime > y && (this.startTime = e, g === 1 && a.hooks.trigger(a.hooks.eventTypes.scroll, m)), g > 1 && a.hooks.trigger(a.hooks.eventTypes.scroll, m);
+      this.direction === "vertical" ? m.y = I(t, c, l) : m.x = I(t, u, p), a.translater.translate(m), e - this.startTime > y && (this.startTime = e, g === 1 && a.hooks.trigger(a.hooks.eventTypes.scroll, m)), g > 1 && a.hooks.trigger(a.hooks.eventTypes.scroll, m);
     }, o.prototype.newPos = function(t, e, r) {
       var i = r.maxScrollPos, s = r.sizeRatio, n = r.minScrollPos, a = t + e;
-      return a = O(a, n, i), Math.round(a / s);
+      return a = I(a, n, i), Math.round(a / s);
     }, o.prototype.destroy = function() {
       var t = this.options, e = t.interactive, r = t.scrollbarTrackClickable, i = t.isCustom;
       e && this.eventHandler.destroy(), r && this.clickEventRegister.destroy(), i || this.wrapper.parentNode.removeChild(this.wrapper), this.hooksFn.forEach(function(s) {
@@ -2900,7 +2900,7 @@ var ke = Jt, vo = (
       return this.pagesMatrix.getPageStats(this.currentPage.pageX, this.currentPage.pageY);
     }, o.prototype.getValidPageIndex = function(t, e) {
       var r = this.pagesMatrix.pageLengthOfX - 1, i = this.pagesMatrix.pageLengthOfY - 1, s = 0, n = 0;
-      return this.loopX && (t += 1, s = s + 1, r = r - 1), this.loopY && (e += 1, n = n + 1, i = i - 1), t = O(t, s, r), e = O(e, n, i), {
+      return this.loopX && (t += 1, s = s + 1, r = r - 1), this.loopY && (e += 1, n = n + 1, i = i - 1), t = I(t, s, r), e = I(e, n, i), {
         pageX: t,
         pageY: e
       };
@@ -2924,7 +2924,7 @@ var ke = Jt, vo = (
       };
     }, o.prototype.getPageByDirection = function(t, e, r) {
       var i = t.pageX, s = t.pageY;
-      i === this.currentPage.pageX && (i = O(i + e, 0, this.pagesMatrix.pageLengthOfX - 1)), s === this.currentPage.pageY && (s = O(s + r, 0, this.pagesMatrix.pageLengthOfY - 1));
+      i === this.currentPage.pageX && (i = I(i + e, 0, this.pagesMatrix.pageLengthOfX - 1)), s === this.currentPage.pageY && (s = I(s + r, 0, this.pagesMatrix.pageLengthOfY - 1));
       var n = this.pagesMatrix.getPageStats(i, 0).x, a = this.pagesMatrix.getPageStats(0, s).y;
       return {
         x: n,
@@ -3085,7 +3085,7 @@ var ke = Jt, vo = (
       this.pages.setCurrentPage(t), this.exposedPage = this.pages.getExposedPage(t);
     }, o.prototype.nearestPage = function(t, e) {
       var r = this.scroll.scroller, i = r.scrollBehaviorX, s = r.scrollBehaviorY, n = i.maxScrollPos, a = i.minScrollPos, c = s.maxScrollPos, l = s.minScrollPos;
-      return this.pages.getNearestPage(O(t, n, a), O(e, c, l));
+      return this.pages.getNearestPage(I(t, n, a), I(e, c, l));
     }, o.prototype.satisfyThreshold = function(t, e) {
       var r = this.scroll.scroller, i = r.scrollBehaviorX, s = r.scrollBehaviorY, n = !0;
       return Math.abs(t - i.absStartPos) <= this.thresholdX && Math.abs(e - s.absStartPos) <= this.thresholdY && (n = !1), n;
@@ -3395,7 +3395,7 @@ var ke = Jt, vo = (
     }, o.prototype._doZoomTo = function(t, e, r, i) {
       var s = this;
       r === void 0 && (r = this.zoomOpt.bounceTime), i === void 0 && (i = !1);
-      var n = this.zoomOpt, a = n.min, c = n.max, l = this.scale, u = O(t, a, c);
+      var n = this.zoomOpt, a = n.min, c = n.max, l = this.scale, u = I(t, a, c);
       (function() {
         if (r === 0) {
           s.scroll.trigger(s.scroll.eventTypes.zooming, {
@@ -3405,14 +3405,14 @@ var ke = Jt, vo = (
         }
         if (r > 0) {
           var p, g = W(), y = g + r, m = function() {
-            var I = W();
-            if (I >= y) {
+            var R = W();
+            if (R >= y) {
               s.scroll.trigger(s.scroll.eventTypes.zooming, {
                 scale: u
               }), st(p);
               return;
             }
-            var w = H.bounce.fn((I - g) / r), U = w * (u - l) + l;
+            var w = H.bounce.fn((R - g) / r), U = w * (u - l) + l;
             s.scroll.trigger(s.scroll.eventTypes.zooming, {
               scale: U
             }), p = Pe(m);
@@ -3490,7 +3490,7 @@ var ke = Jt, vo = (
       return Cr(i, s);
     }, o.prototype.shouldRebound = function() {
       var t = this.zoomOpt, e = t.min, r = t.max, i = this.scale;
-      if (i !== O(i, e, r))
+      if (i !== I(i, e, r))
         return !0;
       var s = this.scroll.scroller, n = s.scrollBehaviorX, a = s.scrollBehaviorY;
       this.resetBoundaries([n, a]);
@@ -3508,7 +3508,7 @@ var ke = Jt, vo = (
     }, o.prototype.getNewPos = function(t, e, r, i, s) {
       s === void 0 && (s = !1);
       var n = t - t * e + (s ? r.currentPos : r.startPos);
-      return i && (n = O(n, r.maxScrollPos, r.minScrollPos)), n > 0 ? Math.floor(n) : Math.ceil(n);
+      return i && (n = I(n, r.maxScrollPos, r.minScrollPos)), n > 0 ? Math.floor(n) : Math.ceil(n);
     }, o.prototype.registerHooks = function(t, e, r) {
       t.on(e, r, this), this.hooksFn.push([t, e, r]);
     }, o.prototype.destroy = function() {
@@ -3614,8 +3614,8 @@ var ke = Jt, vo = (
     r.fingerMoved = !0, r.contentMoved = !1, r.directionLockAction.reset(), i.start(), s.start(), i.resetStartPos(), s.resetStartPos(), r.startTime = +/* @__PURE__ */ new Date();
   });
 }, _o = function(o) {
-  var t = o.hasHorizontalScroll, e = o.hasVerticalScroll, r = o.x, i = o.y, s = o.minScrollX, n = o.maxScrollX, a = o.minScrollY, c = o.maxScrollY, l = o.movingDirectionX, u = o.movingDirectionY, p = !1, g = r >= s && l === -1, y = r <= n && l === 1, m = i >= a && u === -1, I = i <= c && u === 1;
-  return e ? p = m || I : t && (p = g || y), p;
+  var t = o.hasHorizontalScroll, e = o.hasVerticalScroll, r = o.x, i = o.y, s = o.minScrollX, n = o.maxScrollX, a = o.minScrollY, c = o.maxScrollY, l = o.movingDirectionX, u = o.movingDirectionY, p = !1, g = r >= s && l === -1, y = r <= n && l === 1, m = i >= a && u === -1, R = i <= c && u === 1;
+  return e ? p = m || R : t && (p = g || y), p;
 }, $o = function(o) {
   var t = o.hasHorizontalScroll, e = o.hasVerticalScroll, r = o.x, i = o.y, s = o.minScrollX, n = o.maxScrollX, a = o.minScrollY, c = o.maxScrollY, l = !1, u = r > s, p = r < n, g = i > a, y = i < c;
   return e ? l = g || y : t && (l = u || p), l;
@@ -4175,8 +4175,8 @@ var ke = Jt, vo = (
         handler: this.end.bind(this)
       })), this.startEventRegister = new N(this.indicatorEl, i), this.moveEventRegister = new N(window, s), this.endEventRegister = new N(window, n);
     }, o.prototype.refresh = function() {
-      var t = this.scroll, e = t.x, r = t.y, i = t.hasHorizontalScroll, s = t.hasVerticalScroll, n = t.maxScrollX, a = t.maxScrollY, c = vi(this.options.ratio), l = c.ratioX, u = c.ratioY, p = Gr(this.wrapper), g = p.width, y = p.height, m = gt(this.indicatorEl), I = m.width, w = m.height;
-      i && (this.maxScrollX = g - I, this.translateXSign = this.maxScrollX > 0 ? -1 : 1, this.minScrollX = 0, this.ratioX = l || Math.abs(this.maxScrollX / n)), s && (this.maxScrollY = y - w, this.translateYSign = this.maxScrollY > 0 ? -1 : 1, this.minScrollY = 0, this.ratioY = u || Math.abs(this.maxScrollY / a)), this.updatePosition({
+      var t = this.scroll, e = t.x, r = t.y, i = t.hasHorizontalScroll, s = t.hasVerticalScroll, n = t.maxScrollX, a = t.maxScrollY, c = vi(this.options.ratio), l = c.ratioX, u = c.ratioY, p = Gr(this.wrapper), g = p.width, y = p.height, m = gt(this.indicatorEl), R = m.width, w = m.height;
+      i && (this.maxScrollX = g - R, this.translateXSign = this.maxScrollX > 0 ? -1 : 1, this.minScrollX = 0, this.ratioX = l || Math.abs(this.maxScrollX / n)), s && (this.maxScrollY = y - w, this.translateYSign = this.maxScrollY > 0 ? -1 : 1, this.minScrollY = 0, this.ratioY = u || Math.abs(this.maxScrollY / a)), this.updatePosition({
         x: e,
         y: r
       });
@@ -4206,16 +4206,16 @@ var ke = Jt, vo = (
         });
       }
     }, o.prototype.getBScrollPosByRatio = function(t, e, r) {
-      var i = t.x, s = t.y, n = this.scroll, a = n.hasHorizontalScroll, c = n.hasVerticalScroll, l = n.minScrollX, u = n.maxScrollX, p = n.minScrollY, g = n.maxScrollY, y = this.scroll, m = y.x, I = y.y;
+      var i = t.x, s = t.y, n = this.scroll, a = n.hasHorizontalScroll, c = n.hasVerticalScroll, l = n.minScrollX, u = n.maxScrollX, p = n.minScrollY, g = n.maxScrollY, y = this.scroll, m = y.x, R = y.y;
       if (a) {
-        var w = O(i + e, Math.min(this.minScrollX, this.maxScrollX), Math.max(this.minScrollX, this.maxScrollX)), U = Math.round(w / this.ratioX * this.translateXSign);
-        m = O(U, u, l);
+        var w = I(i + e, Math.min(this.minScrollX, this.maxScrollX), Math.max(this.minScrollX, this.maxScrollX)), U = Math.round(w / this.ratioX * this.translateXSign);
+        m = I(U, u, l);
       }
       if (c) {
-        var A = O(s + r, Math.min(this.minScrollY, this.maxScrollY), Math.max(this.minScrollY, this.maxScrollY)), nt = Math.round(A / this.ratioY * this.translateYSign);
-        I = O(nt, g, p);
+        var A = I(s + r, Math.min(this.minScrollY, this.maxScrollY), Math.max(this.minScrollY, this.maxScrollY)), nt = Math.round(A / this.ratioY * this.translateYSign);
+        R = I(nt, g, p);
       }
-      return { x: m, y: I };
+      return { x: m, y: R };
     }, o.prototype.indicatorNotMoved = function(t, e) {
       var r = this.currentPos, i = r.x, s = r.y, n = i === this.minScrollX && t <= 0 || i === this.maxScrollX && t >= 0, a = s === this.minScrollY && e <= 0 || s === this.maxScrollY && e >= 0;
       return n && a;
@@ -4236,11 +4236,11 @@ var ke = Jt, vo = (
       var e = t.x, r = t.y, i = this.scroll, s = i.hasHorizontalScroll, n = i.hasVerticalScroll, a = Q({}, this.currentPos);
       if (s) {
         var c = Math.round(this.ratioX * e * this.translateXSign);
-        a.x = O(c, Math.min(this.minScrollX, this.maxScrollX), Math.max(this.minScrollX, this.maxScrollX));
+        a.x = I(c, Math.min(this.minScrollX, this.maxScrollX), Math.max(this.minScrollX, this.maxScrollX));
       }
       if (n) {
         var l = Math.round(this.ratioY * r * this.translateYSign);
-        a.y = O(l, Math.min(this.minScrollY, this.maxScrollY), Math.max(this.minScrollY, this.maxScrollY));
+        a.y = I(l, Math.min(this.minScrollY, this.maxScrollY), Math.max(this.minScrollY, this.maxScrollY));
       }
       return a;
     }, o.prototype.destroy = function() {
@@ -4282,7 +4282,7 @@ const mi = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAA
 function Pi(o) {
   var ft, dt;
   const t = _(null), e = _(null), r = _(null), i = o.ImgList;
-  let [s, n] = kt(0), [a, c] = kt(1), [l, u] = kt(0), [p, g] = kt(0), [y, m] = kt(0), I = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|OperaMini/i.test(window.navigator.userAgent) || document.documentElement.clientWidth < 744, [w, U] = kt(i.length == 1 || I ? "h" : o.toolInfo.layout);
+  let [s, n] = kt(0), [a, c] = kt(1), [l, u] = kt(0), [p, g] = kt(0), [y, m] = kt(0), R = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|OperaMini/i.test(window.navigator.userAgent) || document.documentElement.clientWidth < 744, [w, U] = kt(i.length == 1 || R ? "h" : o.toolInfo.layout);
   const A = _(null), nt = (ft = A.current) == null ? void 0 : ft.clientHeight, xt = (dt = A.current) == null ? void 0 : dt.clientWidth;
   Re(() => {
     console.log(nt, xt), g(nt), m(xt);
@@ -4439,13 +4439,13 @@ function Pi(o) {
   function ie() {
     return r.current || (r.current = /* @__PURE__ */ new Map()), r.current;
   }
-  return /* @__PURE__ */ R.jsx(R.Fragment, { children: /* @__PURE__ */ R.jsxs("div", { className: "container " + (w == "h" ? "active" : ""), ref: A, children: [
-    o.toolInfo.layoutChange && o.ImgList.length > 1 && !I ? /* @__PURE__ */ R.jsxs("div", { onClick: te, className: "horv " + (w == "h" ? "active" : ""), children: [
-      /* @__PURE__ */ R.jsx("div", { className: "v" }),
-      /* @__PURE__ */ R.jsx("div", { className: "h" })
+  return /* @__PURE__ */ O.jsx(O.Fragment, { children: /* @__PURE__ */ O.jsxs("div", { className: "container " + (w == "h" ? "active" : ""), ref: A, children: [
+    o.toolInfo.layoutChange && o.ImgList.length > 1 && !R ? /* @__PURE__ */ O.jsxs("div", { onClick: te, className: "horv " + (w == "h" ? "active" : ""), children: [
+      /* @__PURE__ */ O.jsx("div", { className: "v" }),
+      /* @__PURE__ */ O.jsx("div", { className: "h" })
     ] }) : "",
-    /* @__PURE__ */ R.jsxs("div", { ref: t, className: "img-wraper " + (w == "h" ? "active" : ""), children: [
-      /* @__PURE__ */ R.jsx(
+    /* @__PURE__ */ O.jsxs("div", { ref: t, className: "img-wraper " + (w == "h" ? "active" : ""), children: [
+      /* @__PURE__ */ O.jsx(
         "img",
         {
           className: "v-img",
@@ -4458,12 +4458,14 @@ function Pi(o) {
           ref: e
         }
       ),
-      /* @__PURE__ */ R.jsx("img", { src: ki, onClick: Mt.bind(null, "l"), className: "img-l" }),
-      /* @__PURE__ */ R.jsx("img", { src: bi, onClick: Mt.bind(null, "r"), className: "img-l" })
+      i.length > 1 && /* @__PURE__ */ O.jsxs(O.Fragment, { children: [
+        /* @__PURE__ */ O.jsx("img", { src: ki, onClick: Mt.bind(null, "l"), className: "img-l" }),
+        /* @__PURE__ */ O.jsx("img", { src: bi, onClick: Mt.bind(null, "r"), className: "img-l" })
+      ] })
     ] }),
-    /* @__PURE__ */ R.jsxs("div", { className: "rightSmall " + (w == "h" ? "active" : ""), children: [
-      /* @__PURE__ */ R.jsx("div", { className: "toolbar " + (w == "h" ? "active" : ""), children: _t.map((d) => /* @__PURE__ */ R.jsx("div", { className: "tool-wrapper", children: /* @__PURE__ */ R.jsx("img", { src: d.icon, alt: "", onClick: d.func.bind(null, d.type) }) })) }),
-      o.ImgList.length >= 1 ? /* @__PURE__ */ R.jsx("div", { className: "small-list " + (w == "h" ? "active" : ""), children: /* @__PURE__ */ R.jsx(
+    /* @__PURE__ */ O.jsxs("div", { className: "rightSmall " + (w == "h" ? "active" : ""), children: [
+      /* @__PURE__ */ O.jsx("div", { className: "toolbar " + (w == "h" ? "active" : ""), children: _t.map((d) => /* @__PURE__ */ O.jsx("div", { className: "tool-wrapper", children: /* @__PURE__ */ O.jsx("img", { src: d.icon, alt: "", onClick: d.func.bind(null, d.type) }) })) }),
+      o.ImgList.length > 1 ? /* @__PURE__ */ O.jsx("div", { className: "small-list " + (w == "h" ? "active" : ""), children: /* @__PURE__ */ O.jsx(
         "div",
         {
           className: "img-list " + (w == "h" ? "active" : ""),
@@ -4471,7 +4473,7 @@ function Pi(o) {
             width: w == "h" ? 82 * i.length + 18 + "px" : "",
             height: w == "v" ? 82 * i.length + 18 + "px" : ""
           },
-          children: i.map((d, S) => /* @__PURE__ */ R.jsx(
+          children: i.map((d, S) => /* @__PURE__ */ O.jsx(
             "img",
             {
               src: d,
@@ -4496,7 +4498,7 @@ const xi = (o) => {
     He.unmountComponentAtNode(t) && t.parentNode && t.parentNode.removeChild(t);
   };
   return He.render(
-    /* @__PURE__ */ R.jsx(
+    /* @__PURE__ */ O.jsx(
       Pi,
       {
         ...o,
