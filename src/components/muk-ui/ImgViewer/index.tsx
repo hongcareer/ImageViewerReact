@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react'
 import './viewer.less'
 import BScroll from 'better-scroll'
-import IR from '../icon/img-rotate.png'
-import IN from '../icon/img-zoomin.png'
-import IO from '../icon/img-zoomout.png'
+import IR from '../icon/img-rotate.svg'
+import IN from '../icon/img-zoomin.svg'
+import IO from '../icon/img-zoomout.svg'
 import RC from '../icon/r-c.png'
 import LC from '../icon/l-c.png'
 

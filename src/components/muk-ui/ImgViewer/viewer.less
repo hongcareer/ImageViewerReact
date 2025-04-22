@@ -91,7 +91,6 @@ div{
       flex-direction: column;
     }
     .toolbar{
-      background: rgba(255,255,255,.8);
       border-radius: 2px;
       display:flex;
       flex-direction: column;
@@ -100,6 +99,11 @@ div{
       top: 50%;
       left: -50px;
       transform: translateY(-50%);
+      border: 1px solid #E7E9EF;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255) !important;
+      border-radius: 4px;
+      border-radius: 100px;
       &.active{
         display: flex;
         height: auto;
@@ -113,9 +117,12 @@ div{
       .tool-wrapper {
         display: flex;
         align-items: center;
-        padding:2px 5px;
+        margin-right: 20px;
+        &:last-child{
+          margin-right: 0px;
+        }
         img {
-          width:26px;
+          width:20px !important;
           cursor: pointer;
         }
       }
