@@ -9,6 +9,7 @@
   "dependencies": {
     "better-scroll": "^2.5.1",
     "img-viewer-react": "^1.0.18",
+    "less": "^4.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
