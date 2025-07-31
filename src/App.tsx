@@ -1,6 +1,6 @@
-// import {ImgViewer,createImgViewer} from 'img-viewer-react/index.umd.js'
-import {ImgViewer} from "./components/muk-ui"
-// import "img-viewer-react/style.css";
+import {ImgViewer} from 'img-viewer-react'
+// import {ImgViewer} from "./components/muk-ui"
+import "img-viewer-react/style.css";
 
 import { useEffect, useState } from 'react';
 
