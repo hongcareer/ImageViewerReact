@@ -1,21 +1,6 @@
 {
   "name": "img-viewer-react",
   "version": "1.0.23",
-  "main": "index.umd.js",
-  "module": "index.mjs",
-  "exports": {
-    ".": {
-      "import": "./index.mjs",
-      "require": "./index.umd.js"
-    },
-    "./style.css": "./style.css"
-  },
-  "files": [
-    "index.*.js",
-    "index.*.mjs",
-    "style.css",
-    "README.md"
-  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -37,10 +22,10 @@
     "eslint": "^8.56.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "img-viewer-react": "file:./image-viewer-react",
     "typescript": "^5.2.2",
-    "vite": "^5.1.4",
-    "vite-plugin-require-transform": "^1.0.21",
-    "img-viewer-react": "^1.0.18"
+    "vite": "5.1.4",
+    "vite-plugin-require-transform": "^1.0.21"
   },
   "keywords": [
     "react",

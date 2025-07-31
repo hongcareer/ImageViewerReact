@@ -5,8 +5,8 @@ npm install img-viewer-react
 ### 引入
 ### 在页面中中引入
 ```
-import { ImgViewer, createImgViewer } from "img-viewer-react/index.mjs";
-import "@/node_modules/img-viewer-react/style.css"; //引入组件样式
+import { ImgViewer, createImgViewer } from "img-viewer-react;
+import "img-viewer-react/style.css"; //引入组件样式
 ```
 
 

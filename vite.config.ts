@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from "path";
 import requireTransform from 'vite-plugin-require-transform';
-import { copyFileSync } from 'fs';
+import { copyFileSync, writeFileSync, readFileSync } from 'fs';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -14,20 +14,63 @@ export default defineConfig({
     {
       name: 'copy-files',
       closeBundle() {
-        const files = ['README.md', 'package.json'];
         const outDir = path.resolve(__dirname, 'image-viewer-react');
         
-        files.forEach(file => {
-          try {
-            copyFileSync(
-              path.resolve(__dirname, file),
-              path.resolve(outDir, file)
-            );
-            console.log(`Copied ${file} to ${outDir}`);
-          } catch (err) {
-            console.error(`Failed to copy ${file}:`, err);
-          }
-        });
+        // 读取根目录的 package.json
+        const rootPackageJson = JSON.parse(
+          readFileSync(path.resolve(__dirname, 'package.json'), 'utf-8')
+        );
+        
+        // 复制 README.md
+        try {
+          copyFileSync(
+            path.resolve(__dirname, 'README.md'),
+            path.resolve(outDir, 'README.md')
+          );
+          console.log(`Copied README.md to ${outDir}`);
+        } catch (err) {
+          console.error(`Failed to copy README.md:`, err);
+        }
+
+        // 创建适合发布的 package.json，版本号从根目录同步
+        const publishPackageJson = {
+          "name": rootPackageJson.name,
+          "version": rootPackageJson.version,
+          "main": "index.umd.js",
+          "module": "index.mjs",
+          "exports": {
+            ".": {
+              "import": "./index.mjs",
+              "require": "./index.umd.js"
+            },
+            "./style.css": "./style.css"
+          },
+          "files": [
+            "index.*.js",
+            "index.*.mjs",
+            "style.css",
+            "README.md"
+          ],
+          "dependencies": {
+            "better-scroll": "^2.5.1"
+          },
+          "peerDependencies": {
+            "react": ">=16.8.0",
+            "react-dom": ">=16.8.0"
+          },
+          "keywords": rootPackageJson.keywords,
+          "author": rootPackageJson.author
+        };
+
+        try {
+          writeFileSync(
+            path.resolve(outDir, 'package.json'),
+            JSON.stringify(publishPackageJson, null, 2)
+          );
+          console.log(`Created package.json v${rootPackageJson.version} for publishing in ${outDir}`);
+        } catch (err) {
+          console.error(`Failed to create package.json:`, err);
+        }
       }
     }
 	],
